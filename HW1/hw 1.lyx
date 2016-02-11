@@ -1,0 +1,1642 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\headheight 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Math 640 Homework #1
+\end_layout
+
+\begin_layout Author
+Arif Ali
+\end_layout
+
+\begin_layout Date
+02/04/2016
+\end_layout
+
+\begin_layout Part*
+Exercise 1
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Some things to note, identitical twins have the same gender; however fraternal
+ twins can have different genders.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The sets below, are 1 if possible, 0 otherwise.
+ Each case is assumed the have the same weigh in each set.
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $(identical):\left\{ Boy\&Boy|identical,Boy\&Girl|identical,Girl\&Boy|identical,Girl\&Girl|identical\right\} =\left\{ 1,0,0,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $P(Boy|identical)=\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $(fraternity):\left\{ Boy\&Boy|fraternity,Boy\&Girl|fraternity,Girl\&Boy|fraternity,Girl\&Girl|fraternity\right\} =\left\{ 1,1,1,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $P(Boy|fraternity)=\frac{1}{4}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $P(identical|Boy)=\frac{P(identical\; twin\cap twin\cap Boy)}{P(Boy)}=\frac{P(Boy|identical)*P(identical)}{P(Boy|identical)*P(identical)+P(Boy|fraternity)}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1/2*1/300}{1/2*1/300+1/4*1/125}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Exercise 2
+\end_layout
+
+\begin_layout Section*
+Part A
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\bar{y}=150$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma=20$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(y_{i}|\theta)=\frac{1}{\sqrt{2\pi}\sigma}exp\left\{ -\frac{1}{2\sigma^{2}}\left(y_{i}-\theta\right)^{2}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y=\left\{ y_{1},y_{2},\ldots y_{n}\right\} are\; iid\sim N(\theta,\sigma)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(y|\theta)=\prod_{i=1}^{n}p(y_{i}|\theta)=\prod_{i=1}^{n}\frac{1}{\sqrt{2\pi}\sigma}exp\left\{ -\frac{1}{2\sigma^{2}}\left(y_{i}-\theta\right)^{2}\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^{n}exp\left\{ \sum_{i=1}^{n}-\frac{1}{2\sigma^{2}}\left(y_{i}-\theta\right)^{2}\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^{n}exp\left\{ -\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}\left(y_{i}-\theta\right)^{2}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $P(\theta)=\frac{1}{\sqrt{2\pi}r_{0}}exp\left\{ -\frac{1}{2r_{0}^{2}}\left(\mu_{0}-\theta\right)^{2}\right\} $
+\end_inset
+
+ where 
+\begin_inset Formula $r_{0}=40$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{0}=180$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(\theta|y)=\frac{\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^{n}exp\left\{ -\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}\left(y_{i}-\theta\right)^{2}\right\} *\frac{1}{\sqrt{2\pi}r_{0}}exp\left\{ -\frac{1}{2r_{0}^{2}}\left(\mu_{0}-\theta\right)^{2}\right\} }{\int_{-\infty}^{\infty}\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^{n}exp\left\{ -\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}\left(y_{i}-\theta\right)^{2}\right\} *\frac{1}{\sqrt{2\pi}r_{0}}exp\left\{ -\frac{1}{2r_{0}^{2}}\left(\mu_{0}-\theta\right)^{2}\right\} \delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^{n}*\frac{1}{\sqrt{2\pi}r_{0}}exp\left\{ -\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}\left(y_{i}-\theta\right)^{2}-\frac{1}{2r_{0}^{2}}\left(\mu_{0}-\theta\right)^{2}\right\} }{\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^{n}*\frac{1}{\sqrt{2\pi}r_{0}}\int_{-\infty}^{\infty}exp\left\{ -\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}\left(y_{i}-\theta\right)^{2}-\frac{1}{2r_{0}^{2}}\left(\mu_{0}-\theta\right)^{2}\right\} \delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{exp\left\{ -\frac{1}{2}\left(\frac{1}{\sigma^{2}}\left(\sum_{i=1}^{n}\left(y_{i}\right)^{2}-\sum_{i=1}^{n}2\theta y_{i}+n\theta^{2}\right)+\frac{1}{r_{0}^{2}}\left(\mu_{0}^{2}-2\theta\mu_{0}+\theta^{2}\right)\right)\right\} }{\int_{-\infty}^{\infty}exp\left\{ -\frac{1}{2}\left(\frac{1}{\sigma^{2}}\left(\sum_{i=1}^{n}\left(y_{i}\right)^{2}-\sum_{i=1}^{n}2\theta y_{i}+n\theta^{2}\right)+\frac{1}{r_{0}^{2}}\left(\mu_{0}^{2}-2\theta\mu_{0}+\theta^{2}\right)\right)\right\} \delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{exp\left\{ -\frac{1}{2}\left(\frac{1}{\sigma^{2}}\left(-\sum_{i=1}^{n}2\theta y_{i}+n\theta^{2}\right)+\frac{1}{r_{0}^{2}}\left(-2\theta\mu_{0}+\theta^{2}\right)\right)\right\} *exp\left\{ -\frac{1}{2}\left(\frac{\sum_{i=1}^{n}\left(y_{i}\right)^{2}}{\sigma^{2}}+\frac{\mu_{0}^{2}}{r_{0}^{2}}\right)\right\} }{\int_{-\infty}^{\infty}exp\left\{ -\frac{1}{2}\left(\frac{1}{\sigma^{2}}\left(-\sum_{i=1}^{n}2\theta y_{i}+n\theta^{2}\right)+\frac{1}{r_{0}^{2}}\left(-2\theta\mu_{0}+\theta^{2}\right)\right)\right\} \delta\theta*exp\left\{ -\frac{1}{2}\left(\frac{\sum_{i=1}^{n}\left(y_{i}\right)^{2}}{\sigma^{2}}+\frac{\mu_{0}^{2}}{r_{0}^{2}}\right)\right\} }=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+note: let 
+\begin_inset Formula $-\sum_{i=1}^{n}2\theta y_{i}=2\theta n\bar{y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}}\left(r_{0}^{2}\left(-2\theta n\bar{y}+n\theta^{2}\right)+\sigma^{2}\left(-2\theta\mu_{0}+\theta^{2}\right)\right)\right\} }{exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}}\left(r_{0}^{2}\left(-2\theta n\bar{y}+n\theta^{2}\right)+\sigma^{2}\left(-2\theta\mu_{0}+\theta^{2}\right)\right)\right\} }=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}}\left(-2\theta n\bar{y}*r_{0}^{2}+n\theta^{2}*r_{0}^{2}-2\theta\mu_{0}*\sigma^{2}+\theta^{2}*\sigma^{2}\right)\right\} }{\int_{-\infty}^{\infty}exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}}\left(-2\theta n\bar{y}*r_{0}^{2}+n\theta^{2}*r_{0}^{2}-2\theta\mu_{0}*\sigma^{2}+\theta^{2}*\sigma^{2}\right)\right\} \delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}}\left(\theta^{2}*\sigma^{2}+n\theta^{2}*r_{0}^{2}-2\theta n\bar{y}*r_{0}^{2}-2\theta\mu_{0}*\sigma^{2}\right)\right\} }{\int_{-\infty}^{\infty}exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}}\left(\theta^{2}*\sigma^{2}+n\theta^{2}*r_{0}^{2}-2\theta n\bar{y}*r_{0}^{2}-2\theta\mu_{0}*\sigma^{2}\right)\right\} \delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}}\left(\theta^{2}*\left(\sigma^{2}+n*r_{0}^{2}\right)-2\theta\left(n\bar{y}*r_{0}^{2}+\mu_{0}*\sigma^{2}\right)\right)\right\} }{\int_{-\infty}^{\infty}exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}}\left(\theta^{2}*\left(\sigma^{2}+n*r_{0}^{2}\right)-2\theta\left(n\bar{y}*r_{0}^{2}+\mu_{0}*\sigma^{2}\right)\right)\right\} \delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+let's substitue 
+\begin_inset Formula $x=\left(\sigma^{2}+n*r_{0}^{2}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $y=\left(n\bar{y}*r_{0}^{2}+\mu_{0}*\sigma^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}}\left(\theta^{2}*x-2\theta y\right)*\frac{1/x}{1/x}\right\} }{\int_{-\infty}^{\infty}exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}}\left(\theta^{2}*x-2\theta y\right)*\frac{1/x}{1/x}\right\} \delta\theta}=\frac{exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}*\frac{1}{x}}\left(\theta^{2}-2\theta y/x\right)\right\} }{\int_{-\infty}^{\infty}exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}*\frac{1}{x}}\left(\theta^{2}-2\theta y/x\right)\right\} \delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}*\frac{1}{x}}\left(\theta^{2}-2\theta y/x\right)\right\} }{\int_{-\infty}^{\infty}exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}*\frac{1}{x}}\left(\theta^{2}-2\theta y/x\right)\right\} \delta\theta}*\frac{exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}*\frac{1}{x}}\left(\left(y/x\right)^{2}\right)\right\} }{exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}*\frac{1}{x}}\left(\left(y/x\right)^{2}\right)\right\} }=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}*\frac{1}{x}}\left(\theta-y/x\right)^{2}\right\} }{\int_{-\infty}^{\infty}exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}*\frac{1}{x}}\left(\theta-y/x\right)^{2}\right\} \delta\theta}*\frac{\left(\sqrt{2\pi r_{0}^{2}\sigma^{2}*\frac{1}{x}}\right)^{-1}}{\left(\sqrt{2\pi r_{0}^{2}\sigma^{2}*\frac{1}{x}}\right)^{-1}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\left(\sqrt{2\pi r_{0}^{2}\sigma^{2}*\frac{1}{x}}\right)^{-1}*exp\left\{ -\frac{1}{2r_{0}^{2}\sigma^{2}*\frac{1}{x}}\left(\theta-y/x\right)^{2}\right\} \sim N(y/x,r_{0}^{2}\sigma^{2}/x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\theta|y\sim N(y/x,r_{0}^{2}\sigma^{2}x)\equiv N\left(\frac{\left(n\bar{y}*r_{0}^{2}+\mu_{0}*\sigma^{2}\right)}{\left(\sigma^{2}+n*r_{0}^{2}\right)},r_{0}^{2}\sigma^{2}/\left(\sigma^{2}+n*r_{0}^{2}\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+After resubstituting everything back in
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\theta|y\sim N\left(\frac{n*150*40^{2}+180*20^{2}}{20^{2}+10*40^{2}},\frac{40^{2}20^{2}}{20^{2}+n*40^{2}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Part B
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\theta|y\sim N\left(\frac{n*150*40^{2}+180*20^{2}}{20^{2}+10*40^{2}},\frac{40^{2}20^{2}}{20^{2}+n*40^{2}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+please note: To simplify 
+\begin_inset Formula $p(\theta|y)$
+\end_inset
+
+, the book's notation will be used, thus: 
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\theta|y\sim N\left(\mu_{1},r_{1}^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(\tilde{y}|\theta)=\frac{1}{\sqrt{2\pi}\sigma}exp\left\{ -\frac{1}{2\sigma^{2}}\left(\tilde{y}-\theta\right)^{2}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $p(\tilde{y}|y)=\int_{-\infty}^{\infty}p(\tilde{y}|\theta)*p(\theta|y)\delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma}exp\left\{ -\frac{1}{2\sigma^{2}}\left(\tilde{y}-\theta\right)^{2}\right\} *\frac{1}{\sqrt{2\pi}r_{1}}*exp\left\{ -\frac{1}{2r_{1}^{2}}\left(\theta-\mu_{1}\right)^{2}\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\int_{-\infty}^{\infty}\frac{1}{2\pi\sigma r_{1}}exp\left\{ -\frac{1}{2\sigma^{2}}\left(\tilde{y}-\theta\right)^{2}-\frac{1}{2r_{1}^{2}}\left(\theta-\mu_{1}\right)^{2}\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}}exp\left\{ -\frac{1}{2}\left(\frac{1}{\sigma^{2}}\left(\tilde{y}-\theta\right)^{2}+\frac{1}{r_{1}^{2}}\left(\theta-\mu_{1}\right)^{2}\right)\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}}exp\left\{ -\frac{1}{2}\left(\frac{1}{\sigma^{2}}\left(\tilde{y}^{2}-2\widetilde{y}\theta+\theta^{2}\right)+\frac{1}{r_{1}^{2}}\left(\theta^{2}-2\theta\mu_{1}+\mu_{1}^{2}\right)\right)\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}}exp\left\{ -\frac{1}{2}\frac{\left(r_{1}^{2}\left(\tilde{y}^{2}-2\widetilde{y}\theta+\theta^{2}\right)+\sigma^{2}\left(\theta^{2}-2\theta\mu_{1}+\mu_{1}^{2}\right)\right)}{\sigma^{2}r_{1}^{2}}\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}}exp\left\{ -\frac{1}{2}\frac{\left(r_{1}^{2}\tilde{y}^{2}-r_{1}^{2}2\widetilde{y}\theta+r_{1}^{2}\theta^{2}+\sigma^{2}\theta^{2}-\sigma^{2}2\theta\mu_{1}+\sigma^{2}\mu_{1}^{2}\right)}{\sigma^{2}r_{1}^{2}}\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}}exp\left\{ -\frac{1}{2}\frac{r_{1}^{2}\theta^{2}+\sigma^{2}\theta^{2}-r_{1}^{2}2\widetilde{y}\theta-\sigma^{2}2\theta\mu_{1}+r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}}exp\left\{ -\frac{1}{2}\frac{r_{1}^{2}\theta^{2}+\sigma^{2}\theta^{2}-r_{1}^{2}2\widetilde{y}\theta-\sigma^{2}2\theta\mu_{1}}{\sigma^{2}r_{1}^{2}}\right\} *exp\left\{ -\frac{1}{2}\frac{r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $ $
+\end_inset
+
+
+\series default
+
+\begin_inset Formula $\frac{1}{\sqrt{2\pi}}*exp\left\{ -\frac{1}{2}\frac{r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}\right\} \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}}exp\left\{ -\frac{1}{2}\frac{\left(r_{1}^{2}+\sigma^{2}\right)\theta^{2}-2\theta\left(r_{1}^{2}\widetilde{y}+\sigma^{2}\mu_{1}\right)}{\sigma^{2}r_{1}^{2}}\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+As this stage, addition substitution is needed
+\begin_inset Formula $\therefore x=r_{1}^{2}+\sigma^{2}\; and\; y=r_{1}^{2}\widetilde{y}+\sigma^{2}\mu_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi}}*exp\left\{ -\frac{1}{2}\frac{r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}\right\} \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}}exp\left\{ -\frac{1}{2}\frac{x\theta^{2}-2\theta y}{\sigma^{2}r_{1}^{2}}*\frac{x^{-1}}{x^{-1}}\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{1}{\sqrt{2\pi}}*exp\left\{ -\frac{1}{2}\frac{r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}\right\} *exp\left\{ \frac{1}{2}*\frac{\left(yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}x^{-1}}\right\} \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}}exp\left\{ -\frac{1}{2}\frac{\theta^{2}-2\theta yx^{-1}}{\sigma^{2}r_{1}^{2}x^{-1}}\right\} *exp\left\{ -\frac{1}{2}*\frac{\left(yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}x^{-1}}\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi}}*exp\left\{ -\frac{1}{2}\frac{r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}+\frac{1}{2}*\frac{\left(yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}x^{-1}}\right\} \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}}exp\left\{ -\frac{1}{2}\frac{\theta^{2}-2\theta yx^{-1}+\left(yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}x^{-1}}\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $x^{-1}\frac{1}{\sqrt{2\pi}}*exp\left\{ -\frac{1}{2}\frac{r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}+\frac{1}{2}*\frac{\left(yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}x^{-1}}\right\} \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}*x^{-1}}exp\left\{ -\frac{1}{2}\frac{\left(\theta-yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}x^{-1}}\right\} \delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The integral
+\begin_inset Formula $\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma r_{1}*x^{-1}}exp\left\{ -\frac{1}{2}\frac{\left(\theta-yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}x^{-1}}\right\} \delta\theta$
+\end_inset
+
+ can be recognized as a PDF
+\begin_inset Formula $\sim N(yx^{-1},\sigma^{2}r_{1}^{2}\sqrt{x^{-1}})\therefore$
+\end_inset
+
+the value is 1
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{1}{\sqrt{2\pi x}}*exp\left\{ -\frac{1}{2}\frac{r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}+\frac{1}{2}*\frac{\left(yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}x^{-1}}\right\} *1=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi x}}*exp\left\{ -\frac{1}{2}\frac{r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}+\frac{1}{2}*\frac{\left(yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}x^{-1}}\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi x}}*exp\left\{ -\frac{1}{2}\frac{r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}+\frac{1}{2}*\frac{\left(yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}x^{-1}}\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi x}}*exp\left\{ -\frac{1}{2}\left[\frac{r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}-\frac{\left(yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}x^{-1}}\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{1}{\sqrt{2\pi x}}*exp\left\{ -\frac{1}{2}\left[\frac{r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}}{\sigma^{2}r_{1}^{2}}-\frac{x*\left(yx^{-1}\right)^{2}}{\sigma^{2}r_{1}^{2}}\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi x}}*exp\left\{ -\frac{1}{2\sigma^{2}r_{1}^{2}}\left[r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}-x^{-1}*y^{2}\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+At this point, I'm replacing the variables 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi\left(r_{1}^{2}+\sigma^{2}\right)}}*exp\left\{ -\frac{1}{2\sigma^{2}r_{1}^{2}}\left[r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}-\left(r_{1}^{2}+\sigma^{2}\right)^{-1}*\left(r_{1}^{2}\widetilde{y}+\sigma^{2}\mu_{1}\right)^{2}\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi\left(r_{1}^{2}+\sigma^{2}\right)}}*exp\left\{ -\frac{1}{2\sigma^{2}r_{1}^{2}}\left[r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}-\left(r_{1}^{2}+\sigma^{2}\right)^{-1}*\left(\left(r_{1}^{2}\widetilde{y}\right)^{2}+2*r_{1}^{2}\widetilde{y}*\sigma^{2}\mu_{1}+\left(\sigma^{2}\mu_{1}\right)^{2}\right)\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{1}{\sqrt{2\pi\left(r_{1}^{2}+\sigma^{2}\right)}}*exp\left\{ -\frac{1}{2\sigma^{2}r_{1}^{2}}\left[\left(r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}\right)*\frac{r_{1}^{2}+\sigma^{2}}{r_{1}^{2}+\sigma^{2}}-\left(r_{1}^{2}+\sigma^{2}\right)^{-1}*\left(\left(r_{1}^{2}\widetilde{y}\right)^{2}+2*r_{1}^{2}\widetilde{y}*\sigma^{2}\mu_{1}+\left(\sigma^{2}\mu_{1}\right)^{2}\right)\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi\left(r_{1}^{2}+\sigma^{2}\right)}}*exp\left\{ -\frac{1}{2\sigma^{2}r_{1}^{2}*\left(r_{1}^{2}+\sigma^{2}\right)}\left[\left(r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}\right)*\left(r_{1}^{2}+\sigma^{2}\right)-\left(\left(r_{1}^{2}\widetilde{y}\right)^{2}+2*r_{1}^{2}\widetilde{y}*\sigma^{2}\mu_{1}+\left(\sigma^{2}\mu_{1}\right)^{2}\right)\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi\left(r_{1}^{2}+\sigma^{2}\right)}}*exp\left\{ -\frac{1}{2\sigma^{2}r_{1}^{2}*\left(r_{1}^{2}+\sigma^{2}\right)}\left[\left(r_{1}^{2}\tilde{y}^{2}+\sigma^{2}\mu_{1}^{2}\right)*\left(r_{1}^{2}+\sigma^{2}\right)-\left(\left(r_{1}^{2}\widetilde{y}\right)^{2}+2*r_{1}^{2}\widetilde{y}*\sigma^{2}\mu_{1}+\left(\sigma^{2}\mu_{1}\right)^{2}\right)\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi\left(r_{1}^{2}+\sigma^{2}\right)}}*exp\left\{ -\frac{1}{2\sigma^{2}r_{1}^{2}*\left(r_{1}^{2}+\sigma^{2}\right)}\left[\left(r_{1}^{2}\tilde{y}^{2}*r_{1}^{2}+\sigma^{2}\mu_{1}^{2}*r_{1}^{2}+r_{1}^{2}\tilde{y}^{2}*\sigma^{2}+\sigma^{2}\mu_{1}^{2}*\sigma^{2}\right)-\left(\left(r_{1}^{2}\widetilde{y}\right)^{2}+2*r_{1}^{2}\widetilde{y}*\sigma^{2}\mu_{1}+\left(\sigma^{2}\mu_{1}\right)^{2}\right)\right]\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $=\frac{1}{\sqrt{2\pi\left(r_{1}^{2}+\sigma^{2}\right)}}*exp\left\{ -\frac{1}{2\sigma^{2}r_{1}^{2}*\left(r_{1}^{2}+\sigma^{2}\right)}\left[\left(\sigma^{2}\mu_{1}^{2}*r_{1}^{2}+r_{1}^{2}\tilde{y}^{2}*\sigma^{2}\right)-\left(2*r_{1}^{2}\widetilde{y}*\sigma^{2}\mu_{1}\right)\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi\left(r_{1}^{2}+\sigma^{2}\right)}}*exp\left\{ -\frac{1}{2\sigma^{2}r_{1}^{2}*\left(r_{1}^{2}+\sigma^{2}\right)}\left[\sigma^{2}*r_{1}^{2}\left(\mu_{1}^{2}-2*\widetilde{y}*\mu_{1}+\tilde{y}^{2}\right)\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{1}{\sqrt{2\pi\left(r_{1}^{2}+\sigma^{2}\right)}}*exp\left\{ -\frac{1}{2\left(r_{1}^{2}+\sigma^{2}\right)}\left[\left(\mu_{1}-\tilde{y}\right)^{2}\right]\right\} \equiv\frac{1}{\sqrt{2\pi\left(r_{1}^{2}+\sigma^{2}\right)}}*exp\left\{ -\frac{1}{2\left(r_{1}^{2}+\sigma^{2}\right)}\left[\left(\tilde{y}-\mu_{1}\right)^{2}\right]\right\} $
+\end_inset
+
+ 
+\series medium
+(This is the format of a normal distribution's PDF)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\therefore\tilde{y}|y\sim N(\mu_{1},r_{1}^{2}+\sigma^{2})\equiv N\left(\frac{n*150*40^{2}+180*20^{2}}{20^{2}+10*40^{2}},\frac{40^{2}20^{2}}{20^{2}+n*40^{2}}+20^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Part C
+\end_layout
+
+\begin_layout Standard
+Please note, for 2C and 2D, I used the equations from the book to derive
+ the mean and standard deviation; however, the numbers match with respect
+ to my results from 2A and 2B.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+n = 10 
+\end_layout
+
+\begin_layout Plain Layout
+
+theta = c((1/(40^2)*180+n/(20^2)*150)/(1/(40^2)+n/(20^2)), 1/(1/40^2+n/20^2))
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+yhat = c((1/(40^2)*180+n/(20^2)*150)/(1/(40^2)+n/(20^2)), 1/(1/40^2+n/20^2)+20^2
+) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+qnorm(c(0.025, 0.975), mean = theta[1], sd = sqrt(theta[2])) 
+\end_layout
+
+\begin_layout Plain Layout
+
+qnorm(c(0.025, 0.975), mean = yhat[1], sd = sqrt(yhat[2]))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 95% posterior interval for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is 
+\begin_inset Formula $\left(138.4879,162.9755\right)$
+\end_inset
+
+ and the 95% posterior predictive interval for 
+\begin_inset Formula $\tilde{y}$
+\end_inset
+
+ is 
+\begin_inset Formula $\left(109.6648,191.7987\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Part D
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+n = 100 
+\end_layout
+
+\begin_layout Plain Layout
+
+theta = c((1/(40^2)*180+n/(20^2)*150)/(1/(40^2)+n/(20^2)), 1/(1/40^2+n/20^2))
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+yhat = c((1/(40^2)*180+n/(20^2)*150)/(1/(40^2)+n/(20^2)), 1/(1/40^2+n/20^2)+20^2
+) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+qnorm(c(0.025, 0.975), mean = theta[1], sd = sqrt(theta[2])) 
+\end_layout
+
+\begin_layout Plain Layout
+
+qnorm(c(0.025, 0.975), mean = yhat[1], sd = sqrt(yhat[2])) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 95% posterior interval for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is 
+\begin_inset Formula $\left(146.1598,153.9899\right)$
+\end_inset
+
+ and the 95% posterior predictive interval for 
+\begin_inset Formula $\tilde{y}$
+\end_inset
+
+ is 
+\begin_inset Formula $\left(110.6805,189.4691\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Exercise 3
+\end_layout
+
+\begin_layout Section*
+Part A
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(\theta)=\frac{\Gamma\left(\alpha+\beta\right)}{\Gamma(\alpha)\Gamma(\beta)}\theta^{\alpha-1}\left(1-\theta\right)^{\beta-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $p(y_{i}|\theta)=\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)\theta^{r}\left(1-\theta\right)^{y_{i}}$
+\end_inset
+
+ 
+\series medium
+Note: Since r is known, I don't consider it as a 
+\begin_inset Quotes eld
+\end_inset
+
+given
+\begin_inset Quotes erd
+\end_inset
+
+ parameter
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $y=\left\{ y_{i},y_{2}\ldots,y_{n}\right\} \sim iid\; Negative\; binomial(r,\theta)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $p(y|\theta)=\prod_{i=1}^{n}\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)\theta^{r}\left(1-\theta\right)^{y_{i}}=\theta^{rn}*\left(1-\theta\right)^{\sum_{i-1}^{n}y_{i}}*\prod_{i=1}^{n}\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(\theta|y)=\frac{p(y|\theta)*p(\theta)}{p(y)}=\frac{\theta^{rn}*\left(1-\theta\right)^{\sum_{i-1}^{n}y_{i}}*\prod_{i=1}^{n}\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)*\frac{\Gamma\left(\alpha+\beta\right)}{\Gamma(\alpha)\Gamma(\beta)}\theta^{\alpha-1}\left(1-\theta\right)^{\beta-1}}{\int_{0}^{1}\theta^{rn}*\left(1-\theta\right)^{\sum_{i-1}^{n}y_{i}}*\prod_{i=1}^{n}\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)*\frac{\Gamma\left(\alpha+\beta\right)}{\Gamma(\alpha)\Gamma(\beta)}\theta^{\alpha-1}\left(1-\theta\right)^{\beta-1}\delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{\theta^{rn+\alpha-1}*\left(1-\theta\right)^{\left(\sum_{i-1}^{n}y_{i}\right)+\beta-1}*\prod_{i=1}^{n}\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)*\frac{\Gamma\left(\alpha+\beta\right)}{\Gamma(\alpha)\Gamma(\beta)}}{\prod_{i=1}^{n}\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)*\frac{\Gamma\left(\alpha+\beta\right)}{\Gamma(\alpha)\Gamma(\beta)}\int_{0}^{1}\theta^{rn+\alpha-1}*\left(1-\theta\right)^{\sum_{i-1}^{n}y_{i}+\beta-1}\delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{\theta^{rn+\alpha-1}*\left(1-\theta\right)^{\sum_{i-1}^{n}y_{i}+\beta-1}}{\int_{0}^{1}\theta^{rn+\alpha-1}*\left(1-\theta\right)^{\sum_{i-1}^{n}y_{i}+\beta-1}\delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{\theta^{rn+\alpha-1}*\left(1-\theta\right)^{\sum_{i-1}^{n}y_{i}+\beta-1}}{\frac{\Gamma(rn+\alpha)\Gamma(\sum_{i-1}^{n}y_{i}+\beta)}{\Gamma\left(rn+\alpha+\sum_{i-1}^{n}y_{i}+\beta\right)}\int_{0}^{1}\frac{\Gamma\left(rn+\alpha+\sum_{i-1}^{n}y_{i}+\beta\right)}{\Gamma(rn+\alpha)\Gamma(\sum_{i-1}^{n}y_{i}+\beta)}*\theta^{rn+\alpha-1}*\left(1-\theta\right)^{\sum_{i-1}^{n}y_{i}+\beta-1}\delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Note:
+\begin_inset Formula $\int_{0}^{1}\frac{\Gamma\left(rn+\alpha+\sum_{i-1}^{n}y_{i}+\beta\right)}{\Gamma(rn+\alpha)\Gamma(\sum_{i-1}^{n}y_{i}+\beta)}*\theta^{rn+\alpha-1}*\left(1-\theta\right)^{\sum_{i-1}^{n}y_{i}+\beta-1}\delta\theta=1$
+\end_inset
+
+ because this is the PDF of 
+\begin_inset Formula $Beta(rn+\alpha,\sum_{i-1}^{n}y_{i}+\beta)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series bold
+\begin_inset Formula $\frac{\theta^{rn+\alpha-1}*\left(1-\theta\right)^{\sum_{i-1}^{n}y_{i}+\beta-1}}{\frac{\Gamma(rn+\alpha)\Gamma(\sum_{i-1}^{n}y_{i}+\beta)}{\Gamma\left(rn+\alpha+\sum_{i-1}^{n}y_{i}+\beta\right)}*1}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{\Gamma\left(rn+\alpha+\sum_{i-1}^{n}y_{i}+\beta\right)}{\Gamma(rn+\alpha)\Gamma(\sum_{i-1}^{n}y_{i}+\beta)}*\theta^{rn+\alpha-1}*\left(1-\theta\right)^{\sum_{i-1}^{n}y_{i}+\beta-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\theta|y\sim\sim Beta(rn+\alpha,\sum_{i-1}^{n}y_{i}+\beta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Part B
+\end_layout
+
+\begin_layout Subsection*
+posterior mean
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Since 
+\begin_inset Formula $\theta|y\sim Beta(rn+\alpha,\sum_{i-1}^{n}y_{i}+\beta)\equiv Beta(rn+\alpha,n\bar{y}+\beta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $E(\theta|y)=\frac{rn+\alpha}{rn+\alpha+\sum_{i-1}^{n}y_{i}+\beta}=\frac{rn+\alpha}{rn+\alpha+n\bar{y}+\beta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+MLE
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $L(\theta)=\prod_{i=1}^{n}\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)\theta^{r}\left(1-\theta\right)^{y_{i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $log(L(\theta))=log\left(\prod_{i=1}^{n}\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)\theta^{r}\left(1-\theta\right)^{y_{i}}\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\sum_{i=1}^{n}log\left(\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)\theta^{r}\left(1-\theta\right)^{y_{i}}\right)=\sum_{i=1}^{n}log\left(\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)\right)+\sum_{i=1}^{n}log\left(\theta^{r}\right)+\sum_{i=1}^{n}log\left(\left(1-\theta\right)^{y_{i}}\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\sum_{i=1}^{n}log\left(\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)\right)+\sum_{i=1}^{n}r*log\left(\theta\right)+\sum_{i=1}^{n}y_{i}log\left(\left(1-\theta\right)\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+note: 
+\begin_inset Formula $\sum_{i=1}^{n}y_{i}=n\bar{y}$
+\end_inset
+
+ since 
+\begin_inset Formula $\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\sum_{i=1}^{n}log\left(\left(\begin{array}{c}
+y_{i}+r-1\\
+y_{i}
+\end{array}\right)\right)+n*r*log\left(\theta\right)+n\bar{y}log\left(\left(1-\theta\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\delta/d\theta(log(L(\theta|y)))=0+n*r*\frac{1}{\theta}+n\bar{y}*(-1)*\frac{1}{1-\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{nr}{\theta}-\frac{n\bar{y}}{1-\theta}=\frac{nr}{\theta}+\frac{n\bar{y}}{\theta-1}=0\implies nr(\theta-1)+n\bar{y}*\theta=\left(nr+n\bar{y}\right)\theta-nr=0\implies\left(nr+n\bar{y}\right)\theta=nr$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\therefore\hat{\theta}=\frac{nr}{nr+n\bar{y}}=\frac{r}{r+\bar{y}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+To confirm this is a maximum critical point, the second derivative of the
+ log likelihood must be taken
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+\begin_inset Formula $\delta^{2}/d\theta(log(L(\theta)))=\delta^{2}/d\theta\left(\frac{nr}{\theta}-\frac{n\bar{y}}{1-\theta}\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+\begin_inset Formula $\delta^{2}/d\theta\left(nr*\theta^{-1}-n\bar{y}*\left(1-\theta\right)^{-1}\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+\begin_inset Formula $-nr*\theta^{-2}-n\bar{y}*(-1)*(-1)*\left(1-\theta\right)^{-2}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+\begin_inset Formula $-nr*\theta^{-2}-n\bar{y}*\left(1-\theta\right)^{-2}$
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+By substituting 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ into the second derivative of the log likelihood, we get
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+\begin_inset Formula $-nr*\left(\frac{r}{r+\bar{y}}\right)^{-2}-n\bar{y}*\left(1-\left(\frac{r}{r+\bar{y}}\right)\right)^{-2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+\begin_inset Formula $ $
+\end_inset
+
+Thus the value is negative, which indicates that 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ is a maximum.
+\end_layout
+
+\begin_layout Subsection*
+weighted average of the MLE and the prior mean
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+note the prior mean is 
+\begin_inset Formula $\frac{\alpha}{\alpha+\beta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{r}{r+\bar{y}}*\omega+(1-\omega)*\frac{\alpha}{\alpha+\beta}=\frac{rn+\alpha}{rn+\alpha+n\bar{y}+\beta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\omega=\frac{n(r+\bar{y)}}{rn+\alpha+n\bar{y}+\beta}$
+\end_inset
+
+ Note: This was choosen in order to cancel out the MLE's denomintor and
+ multiply the numerator by 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $1-\omega=1-\frac{n(r+\bar{y)}}{rn+\alpha+n\bar{y}+\beta}=\frac{rn+\alpha+n\bar{y}+\beta}{rn+\alpha+n\bar{y}+\beta}-\frac{n(r+\bar{y)}}{rn+\alpha+n\bar{y}+\beta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{rn+\alpha+n\bar{y}+\beta}{rn+\alpha+n\bar{y}+\beta}-\frac{(nr+\bar{ny)}}{rn+\alpha+n\bar{y}+\beta}=\frac{\alpha+\beta}{rn+\alpha+n\bar{y}+\beta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\therefore\frac{r}{r+\bar{y}}*\omega+(1-\omega)*\frac{\alpha}{\alpha+\beta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{r}{r+\bar{y}}*\frac{n(r+\bar{y)}}{rn+\alpha+n\bar{y}+\beta}+\frac{\alpha+\beta}{rn+\alpha+n\bar{y}+\beta}*\frac{\alpha}{\alpha+\beta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $r*\frac{n}{rn+\alpha+n\bar{y}+\beta}+\frac{1}{rn+\alpha+n\bar{y}+\beta}*\alpha=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\frac{rn+\alpha}{rn+\alpha+n\bar{y}+\beta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Part C
+\end_layout
+
+\begin_layout Standard
+The following is the R code used.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+r = 5 
+\end_layout
+
+\begin_layout Plain Layout
+
+y = c(7,10,5,8,6,12,6,9,7,5) 
+\end_layout
+
+\begin_layout Plain Layout
+
+alpha = c(1,.5,5,1,5) 
+\end_layout
+
+\begin_layout Plain Layout
+
+beta = c(1,.5,5,5,1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+par(mfrow = c(3,1)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(alpha)){   
+\end_layout
+
+\begin_layout Plain Layout
+
+	theta = seq(0,1,0.01)   
+\end_layout
+
+\begin_layout Plain Layout
+
+	credible_interval = qbeta(c(0.025,0.975), r*length(Y)+alpha[i], sum(Y)+beta[i])
+  	
+\end_layout
+
+\begin_layout Plain Layout
+
+	posterior_mean = (r*length(Y)+alpha[i])/(r*length(Y)+alpha[i]+sum(Y)+beta[i])
+   	
+\end_layout
+
+\begin_layout Plain Layout
+
+	plot(theta,  dbeta(theta, r*length(Y)+alpha[i], sum(Y)+beta[i]),      
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+		type = "l", col = "blue", xlab = expression(theta),         
+\end_layout
+
+\begin_layout Plain Layout
+
+		ylab = "Density",        
+\end_layout
+
+\begin_layout Plain Layout
+
+		main = paste("alpha = ", alpha[i],"and", "beta = ", beta[i],         
+            	
+\end_layout
+
+\begin_layout Plain Layout
+
+		"- blue is posterior and red is prior"),        
+\end_layout
+
+\begin_layout Plain Layout
+
+		sub = paste("The Credible Interval is", "(",credible_interval[1],",",
+                		credible_interval[2], ")",                    
+\end_layout
+
+\begin_layout Plain Layout
+
+		"and the posterior mean is", posterior_mean))
+\end_layout
+
+\begin_layout Plain Layout
+
+  lines(theta, dbeta(theta, alpha[i], beta[i]), col = "red") 
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The red line in the following graphs represent the prior distributions of
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and the blue line represent the posterior distributions of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ The subtitle contains the 95% credible interval as well as the posterior
+ mean for each 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ pairing.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Graphics
+	filename hw13c1.jpeg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Graphics
+	filename hw13c2.jpeg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Exercise 4
+\end_layout
+
+\begin_layout Section*
+Part A
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Setting Pareto distribution into exponential family form.
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $f(x|\theta)=\frac{\theta k^{\theta}}{x^{\theta+1}}=\frac{\theta k^{\theta}}{x^{1}x^{\theta}}=x^{-1}\theta\frac{k^{\theta}}{x^{\theta}}=x^{-1}\theta*\left(\frac{k}{x}\right)^{\theta}=x^{-1}\theta*exp\left\{ log\left(\left(\frac{k}{x}\right)^{\theta}\right)\right\} =x^{-1}\theta*exp\left\{ \theta log\left(\left(\frac{k}{x}\right)\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $h(x)=x^{-1}$
+\end_inset
+
+, 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $g(\theta)=\theta$
+\end_inset
+
+, 
+\begin_inset Formula $\phi(\theta)=\theta$
+\end_inset
+
+, and 
+\begin_inset Formula $t(x)=log\left(\frac{k}{x}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(\theta)\propto(\theta)^{n_{0}}*exp\left\{ \theta v\right\} =(\theta)^{n_{0}}e^{\theta v}=\theta^{\left(n_{0}+1\right)-1}e^{-\left(-\theta v\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+From the conjugate prior, it can be recognized as the kernel of the un-normalize
+d density of the gamma distribution
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\therefore$
+\end_inset
+
+
+\begin_inset Formula $\theta\sim gamma(n_{0}+1,-v)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Part B
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+From 4b, we are given that the prior distribution is 
+\begin_inset Formula $gamma(\alpha,\beta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p(\theta)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}\theta^{\alpha-1}e^{-\beta\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $c=log(k/x_{i})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $p(\theta|x)=\frac{p(x|\theta)*p(\theta)}{\int_{0}^{1}p(x|\theta)*p(\theta)\delta\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Since 
+\begin_inset Formula $x_{1}\ldots x_{n}$
+\end_inset
+
+ are 
+\begin_inset Formula $iid\sim Pareto(k,\theta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(x|\theta)=\prod_{i=1}^{n}p(x_{i}|\theta)=\prod_{i=1}^{n}x_{i}^{-1}\theta*exp\left\{ \theta log(k/x_{i}\right\} =\theta^{n}*exp\left\{ \sum_{i=1}^{n}\theta log(k/x_{i}\right\} *\prod_{i=1}^{n}x_{i}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(\theta|x)=\frac{\theta^{n}*exp\left\{ \sum_{i=1}^{n}\theta log(k/x)_{i}\right\} *\prod_{i=1}^{n}x_{i}^{-1}*\frac{\beta^{\alpha}}{\Gamma(\alpha)}\theta^{\alpha-1}e^{-\beta\theta}}{\int_{0}^{1}\theta^{n}*exp\left\{ \sum_{i=1}^{n}\theta log(k/x_{i})\right\} *\prod_{i=1}^{n}x_{i}^{-1}*\frac{\beta^{\alpha}}{\Gamma(\alpha)}\theta^{\alpha-1}e^{-\beta\theta}\delta\theta}=\frac{\theta^{n}*exp\left\{ \sum_{i=1}^{n}\theta log(k/x_{i})\right\} *\frac{\beta^{\alpha}}{\Gamma(\alpha)}\theta^{\alpha-1}exp\left\{ -\beta\theta\right\} }{\int_{0}^{1}\theta^{n}*exp\left\{ \sum_{i=1}^{n}\theta log(k/x_{i})\right\} *\frac{\beta^{\alpha}}{\Gamma(\alpha)}\theta^{\alpha-1}exp\left\{ -\beta\theta\right\} \delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $=\frac{\theta^{n}*exp\left\{ \sum_{i=1}^{n}\theta*log(k/x_{i})\right\} *\frac{\beta^{\alpha}}{\Gamma(\alpha)}\theta^{\alpha-1}exp\left\{ -\beta\theta\right\} }{\int_{0}^{1}\theta^{n}*exp\left\{ \sum_{i=1}^{n}\theta*log(k/x_{i})\right\} *\frac{\beta^{\alpha}}{\Gamma(\alpha)}\theta^{\alpha-1}exp\left\{ -\beta\theta\right\} \delta\theta}=\frac{\frac{\beta^{\alpha}}{\Gamma(\alpha)}\theta^{\alpha+n-1}exp\left\{ -\beta\theta+\sum_{i=1}^{n}\theta*log(k/x_{i})\right\} }{\int_{0}^{1}\frac{\beta^{\alpha}}{\Gamma(\alpha)}\theta^{\alpha+n-1}exp\left\{ -\beta\theta+\sum_{i=1}^{n}\theta*log(k/x_{i})\right\} \delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{\frac{\beta^{\alpha}}{\Gamma(\alpha)}\theta^{\alpha+n-1}exp\left\{ -\theta\left(\beta-\sum_{i=1}^{n}log(k/x_{i})\right)\right\} }{\int_{0}^{1}\frac{\beta^{\alpha}}{\Gamma(\alpha)}\theta^{\alpha+n-1}exp\left\{ -\theta\left(\beta-\sum_{i=1}^{n}log(k/x_{i})\right)\right\} \delta\theta}*\frac{\Gamma(\alpha)}{\Gamma(\alpha)}*\frac{\frac{1}{\Gamma(\alpha+n)}}{\frac{1}{\Gamma(\alpha+n)}}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{\frac{\beta^{\alpha}}{\Gamma(\alpha+n)}\theta^{\alpha+n-1}exp\left\{ -\theta\left(\beta-\sum_{i=1}^{n}log(k/x_{i})\right)\right\} }{\int_{0}^{1}\frac{\beta^{\alpha}}{\Gamma(\alpha+n)}\theta^{\alpha+n-1}exp\left\{ -\theta\left(\beta-\sum_{i=1}^{n}log(k/x_{i})\right)\right\} \delta\theta}*\frac{\frac{(\beta-\sum_{i=1}^{n}log(k/x_{i}))^{\alpha+n}}{\beta^{\alpha}}}{\frac{(\beta-\sum_{i=1}^{n}log(k/x_{i}))^{\alpha+n}}{\beta^{\alpha}}}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{\frac{(\beta-\sum_{i=1}^{n}log(k/x_{i}))^{\alpha+n}}{\Gamma(\alpha+n)}\theta^{\alpha+n-1}exp\left\{ -\theta\left(\beta-\sum_{i=1}^{n}log(k/x_{i})\right)\right\} }{\int_{0}^{1}\frac{(\beta-\sum_{i=1}^{n}log(k/x_{i}))^{\alpha+n}}{\Gamma(\alpha+n)}\theta^{\alpha+n-1}exp\left\{ -\theta\left(\beta-\sum_{i=1}^{n}log(k/x_{i})\right)\right\} \delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Please note that both the numerator and the formula within the integral
+ of the denomintor are PDFs of gamma: 
+\begin_inset Formula $gamma(\alpha+n,\beta+\sum_{i=1}^{n}log(k/x_{i}))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{(\beta-\sum_{i=1}^{n}log(k/x_{i}))^{\alpha+n}}{\Gamma(\alpha+n)}\theta^{\alpha+n-1}exp\left\{ -\theta\left(\beta-\sum_{i=1}^{n}log(k/x_{i})\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta|x\sim gamma(\alpha+n,\beta-\sum_{i=1}^{n}log(k/x_{i}))$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

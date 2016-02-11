@@ -1,0 +1,249 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\headheight 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Exercise 3
+\end_layout
+
+\begin_layout Subsection*
+Part A
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $y_{1}\ldots y_{n}\sim iid\; exp\left(\theta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $p(y|\theta)=\prod_{i=1}^{n}\theta e^{-\theta*y_{i}}=\left(\theta\right)^{n}e^{-\theta\sum_{i=1}^{n}y_{i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $log(p(y|\theta))=n*log(\theta)-\theta\sum_{i=1}^{n}y_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\delta/d\theta(log(p(y|\theta))=n/\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\delta^{2}/d\theta^{2}(log(p(y|\theta))=-n/\theta^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $I(\theta)=-E\left(-n/\theta^{2}\right)=\frac{n}{\theta^{2}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\left(I(\theta)\right)^{1/2}=\frac{\sqrt{n}}{\theta}=\frac{\sqrt{n}}{\theta-0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p(\theta)\propto\frac{1}{\theta-0}\therefore\theta\sim unif(0,\theta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part B
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $p(y|\theta,n=10,\sum_{i=1}^{n}y_{i}=1012)=\prod_{i=1}^{n}\theta e^{-\theta*y_{i}}=\left(\theta\right)^{10}e^{-1012*\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $p(\theta|y)=\frac{\left(\theta\right)^{10}e^{-1012*\theta}*\sqrt{n}*\theta^{-1}}{\int_{0}^{\infty}\left(\theta\right)^{10}e^{-1012*\theta}*\sqrt{n}*\theta^{-1}\delta\theta}=\frac{\left(\theta\right)^{9}e^{-1012*\theta}}{\int_{0}^{\infty}\left(\theta\right)^{9}e^{-1012*\theta}\delta\theta}=\frac{\left(\theta\right)^{9}e^{-1012*\theta}}{\int_{0}^{\infty}\left(\theta\right)^{9}e^{-1012*\theta}\delta\theta}=\frac{\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{9}e^{-1012*\theta}}{\frac{1012^{10}}{\Gamma(10)}*\int_{0}^{\infty}\left(\theta\right)^{10-1}e^{-1012*\theta}\delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $\frac{\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{9}e^{-1012*\theta}}{\int_{0}^{\infty}\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}\delta\theta}=\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}\therefore y|\theta\sim gamma(10,1012)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+Please note that 
+\begin_inset Formula $\int_{0}^{\infty}\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}\delta\theta=1\; since\;\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}\sim gamma(10,1012)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part D
+\end_layout
+
+\begin_layout Subsubsection*
+i.
+\end_layout
+
+\begin_layout Paragraph
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $p(y|\theta,n=11,\sum_{i=1}^{n}y_{i}=1012+95)=\left(\theta\right)^{11}e^{-\left(1012+95\right)*\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $p(\theta|y_{1}\ldots y_{11})=\frac{\left(\theta\right)^{11}e^{-\left(1012+95\right)*\theta}*\sqrt{n}*\theta^{-1}}{\int_{0}^{\infty}\left(\theta\right)^{11}e^{-\left(1012+95\right)*\theta}*\sqrt{n}*\theta^{-1}\delta\theta}=\frac{\frac{(1012+95)^{11}}{\Gamma(11)}*\left(\theta\right)^{10}e^{-\left(1012+95\right)*\theta}}{\frac{(1012+95)^{11}}{\Gamma(1`)}*\int_{0}^{\infty}\left(\theta\right)^{11-1}e^{-\left(1012+95\right)*\theta}\delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $\frac{\left(1012+95\right)^{11}}{\Gamma(11)}*\left(\theta\right)^{11-1}e^{-\left(1012+95\right)*\theta}\therefore y|\theta\sim gamma(11,1012+95)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+ii.
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\pi(\theta)=p(\theta|y_{1}\ldots y_{10})=\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $L(\theta|y_{11})=\theta e^{-95\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\pi(\theta)*L(\theta|y_{11})=\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}*\theta e^{-95\theta}=\frac{1012^{10}}{\Gamma(10)}*(\theta)^{11-1}e^{-(1012+95)\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $p(\theta|y_{1}\ldots y_{11})=\frac{\frac{1012^{10}}{\Gamma(10)}*(\theta)^{11-1}e^{-(1012+95)\theta}}{\int\frac{1012^{10}}{\Gamma(10)}*(\theta)^{11-1}e^{-(1012+95)\theta}\delta\theta}=\frac{\frac{(1012+95)^{11}}{\Gamma(11)}*(\theta)^{11-1}e^{-(1012+95)\theta}}{\int\frac{1012^{10}}{\Gamma(11)}*(\theta)^{11-1}e^{-(1012+95)\theta}\delta\theta}=\frac{(1012+95)^{11}}{\Gamma(11)}*(\theta)^{11-1}e^{-(1012+95)\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part E
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
