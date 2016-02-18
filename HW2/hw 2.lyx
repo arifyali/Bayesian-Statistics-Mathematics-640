@@ -65,8 +65,228 @@
 
 \begin_body
 
+\begin_layout Title
+Mathematics 640: Bayesian Statistics Homework 2
+\end_layout
+
+\begin_layout Author
+Arif Ali
+\end_layout
+
+\begin_layout Date
+02/17/16
+\end_layout
+
 \begin_layout Section*
-Exercise 3
+Exercise 1
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\hat{\mu_{c}}=1.013,\;\hat{\sigma_{c}}=0.24,\; n_{c}=32$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\hat{\mu_{t}}=1.173,\;\hat{\sigma_{t}}=0.20,\; n_{t}=36$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part A
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $y_{c_{i}}\sim i.i.d\; N(\mu_{c},\sigma_{c}^{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $y_{t_{i}}\sim i.i.d\; N(\mu_{t},\sigma_{t}^{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $p(y|\mu_{c},\mu_{t},\sigma_{t},\sigma_{c})=\prod_{i=1}^{32}N(y_{i}|\mu_{c},\sigma_{c}^{2})*\prod_{i=1}^{36}N(y_{i}|\mu_{t},\sigma_{t}^{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Since there is a uniform prior distribution on 
+\begin_inset Formula $(\mu_{c},\mu_{t},log\sigma_{c},log\sigma_{t})$
+\end_inset
+
+, the the posterior distribution of 
+\begin_inset Formula $(\mu_{c},\mu_{t},log\sigma_{c},log\sigma_{t})$
+\end_inset
+
+ follows the distibution:
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\mu|y\sim t(n-1,\bar{y},s^{2}/n)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Because 
+\begin_inset Quotes eld
+\end_inset
+
+under the noninformative uniform prior distribution on (
+\begin_inset Formula $\mu$
+\end_inset
+
+, 
+\begin_inset Formula $log(\sigma)$
+\end_inset
+
+), the posterior distribution of 
+\begin_inset Formula $\mu$
+\end_inset
+
+ has the form:
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $\frac{\mu-\bar{y}}{s/\sqrt{n}}|y\sim t_{n-1}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series medium
+(Gelman pg.
+ 66)
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Under the assumption that the samples from the control and treatment are
+ independent, the respective pairs of 
+\series default
+
+\begin_inset Formula $y_{c_{i}}\sim i.i.d\; N(\mu_{c},\sigma_{c}^{2})$
+\end_inset
+
+ 
+\series medium
+and 
+\series default
+
+\begin_inset Formula $y_{t_{i}}\sim i.i.d\; N(\mu_{t},\sigma_{t}^{2})$
+\end_inset
+
+ 
+\series medium
+can also be treated independently.
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\therefore\mu_{c}|y\sim t(32-1,1.013,\left(0.24\right)^{2}/32)\equiv\mu_{c}|y\sim t(31,1.013,\left(0.24\right)^{2}/32)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+and 
+\begin_inset Formula $\mu_{t}|y\sim t(36-1,1.173,\left(0.20\right)^{2}/36)\equiv\mu_{c}|y\sim t(35,1.173,\left(0.20\right)^{2}/36)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part B
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+This was the R code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+mu.c = rt(1e6, df=31)*sqrt(0.24^2/32)+1.013 
+\end_layout
+
+\begin_layout Plain Layout
+
+mu.t = rt(1e6, df=35)*sqrt(0.2^2/36)+1.173
+\end_layout
+
+\begin_layout Plain Layout
+
+quantile(mu.t-mu.c, c(0.025,0.975)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+hist(mu.t-mu.c, breaks = 50)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename e1b.jpeg
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The 95% Posterior interval is 
+\begin_inset Formula $\left(0.05042445\;,\;0.26938918\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Exercise 2
 \end_layout
 
 \begin_layout Subsection*
@@ -116,49 +336,163 @@ Part A
 \end_layout
 
 \begin_layout Paragraph*
-\begin_inset Formula $\left(I(\theta)\right)^{1/2}=\frac{\sqrt{n}}{\theta}=\frac{\sqrt{n}}{\theta-0}$
+\begin_inset Formula $\left(I(\theta)\right)^{1/2}=\frac{\sqrt{n}}{\theta}=\sqrt{n}*\theta^{-1}=p(\theta)$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $p(\theta)\propto\frac{1}{\theta-0}\therefore\theta\sim unif(0,\theta)$
+\begin_layout Paragraph*
+\begin_inset Formula $\int_{0}^{\infty}\sqrt{n}*\theta^{-1}\delta\theta=\sqrt{n}*\int_{0}^{\infty}\theta^{-1}\delta\theta=\infty$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Therefore, this is an improper prior.
 \end_layout
 
 \begin_layout Subsection*
 Part B
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Paragraph*
 \begin_inset Formula $p(y|\theta,n=10,\sum_{i=1}^{n}y_{i}=1012)=\prod_{i=1}^{n}\theta e^{-\theta*y_{i}}=\left(\theta\right)^{10}e^{-1012*\theta}$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Paragraph
-\begin_inset Formula $p(\theta|y)=\frac{\left(\theta\right)^{10}e^{-1012*\theta}*\sqrt{n}*\theta^{-1}}{\int_{0}^{\infty}\left(\theta\right)^{10}e^{-1012*\theta}*\sqrt{n}*\theta^{-1}\delta\theta}=\frac{\left(\theta\right)^{9}e^{-1012*\theta}}{\int_{0}^{\infty}\left(\theta\right)^{9}e^{-1012*\theta}\delta\theta}=\frac{\left(\theta\right)^{9}e^{-1012*\theta}}{\int_{0}^{\infty}\left(\theta\right)^{9}e^{-1012*\theta}\delta\theta}=\frac{\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{9}e^{-1012*\theta}}{\frac{1012^{10}}{\Gamma(10)}*\int_{0}^{\infty}\left(\theta\right)^{10-1}e^{-1012*\theta}\delta\theta}=$
+\begin_layout Paragraph*
+\begin_inset Formula $p(\theta|y)=\frac{\left(\theta\right)^{10}e^{-1012*\theta}*\sqrt{n}*\theta^{-1}}{\int_{0}^{\infty}\left(\theta\right)^{10}e^{-1012*\theta}*\sqrt{n}*\theta^{-1}\delta\theta}=\frac{\left(\theta\right)^{9}e^{-1012*\theta}}{\int_{0}^{\infty}\left(\theta\right)^{9}e^{-1012*\theta}\delta\theta}=$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Paragraph
-\begin_inset Formula $\frac{\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{9}e^{-1012*\theta}}{\int_{0}^{\infty}\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}\delta\theta}=\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}\therefore y|\theta\sim gamma(10,1012)$
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{\left(\theta\right)^{9}e^{-1012*\theta}}{\int_{0}^{\infty}\left(\theta\right)^{9}e^{-1012*\theta}\delta\theta}=\frac{\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{9}e^{-1012*\theta}}{\frac{1012^{10}}{\Gamma(10)}*\int_{0}^{\infty}\left(\theta\right)^{10-1}e^{-1012*\theta}\delta\theta}=$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{9}e^{-1012*\theta}}{\int_{0}^{\infty}\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}\delta\theta}=\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\therefore y|\theta\sim gamma(10,1012)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
 
 \series medium
 Please note that 
 \begin_inset Formula $\int_{0}^{\infty}\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}\delta\theta=1\; since\;\frac{1012^{10}}{\Gamma(10)}*\left(\theta\right)^{10-1}e^{-1012*\theta}\sim gamma(10,1012)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part C
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The following is R code to generate the plot.
+ Please this was modified from Lecture code :
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+library(coda) 
+\end_layout
+
+\begin_layout Plain Layout
+
+th = as.mcmc(rgamma(1e6,10,1012)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+th.hpd = HPDinterval(th, prob = 0.90) 
+\end_layout
+
+\begin_layout Plain Layout
+
+th.hpd th.ci = qgamma(c(0.05,0.95),10,1012)
+\end_layout
+
+\begin_layout Plain Layout
+
+curve(dgamma(x, 10,1012), from=0, to=0.2, xlab=expression(theta),       
+\end_layout
+
+\begin_layout Plain Layout
+
+	ylab=expression(paste("p(",theta,"|y)"))) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	lines(x=c(th.hpd[1], th.hpd[1], th.hpd[2], th.hpd[2]),       
+\end_layout
+
+\begin_layout Plain Layout
+
+	y = dgamma(c(0, th.hpd[1], th.hpd[2], 0), 10, 1012), col="blue", lwd=2, lty=1)
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+lines(x=c(th.ci[1], th.ci[1], th.ci[2], th.ci[2]),       
+\end_layout
+
+\begin_layout Plain Layout
+
+	y = dgamma(c(0, th.ci[1], th.ci[2], 0), 10, 1012), col="green", lwd=2, lty=1)
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+legend("topright", c("90% HPD interval", "90% credible interval"),     
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+		col=c("blue", "green"), lty=c(1,2), lwd=c(2,2), bty="n")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename e2c.jpeg
+	scale 75
+
 \end_inset
 
 
@@ -172,7 +506,7 @@ Part D
 i.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Paragraph*
 
 \family roman
 \series medium
@@ -191,14 +525,21 @@ i.
 
 \end_layout
 
-\begin_layout Paragraph
-\begin_inset Formula $p(\theta|y_{1}\ldots y_{11})=\frac{\left(\theta\right)^{11}e^{-\left(1012+95\right)*\theta}*\sqrt{n}*\theta^{-1}}{\int_{0}^{\infty}\left(\theta\right)^{11}e^{-\left(1012+95\right)*\theta}*\sqrt{n}*\theta^{-1}\delta\theta}=\frac{\frac{(1012+95)^{11}}{\Gamma(11)}*\left(\theta\right)^{10}e^{-\left(1012+95\right)*\theta}}{\frac{(1012+95)^{11}}{\Gamma(1`)}*\int_{0}^{\infty}\left(\theta\right)^{11-1}e^{-\left(1012+95\right)*\theta}\delta\theta}=$
+\begin_layout Paragraph*
+\begin_inset Formula $p(\theta|y_{1}\ldots y_{11})=\frac{\left(\theta\right)^{11}e^{-\left(1012+95\right)*\theta}*\sqrt{n}*\theta^{-1}}{\int_{0}^{\infty}\left(\theta\right)^{11}e^{-\left(1012+95\right)*\theta}*\sqrt{n}*\theta^{-1}\delta\theta}=$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{\frac{(1012+95)^{11}}{\Gamma(11)}*\left(\theta\right)^{10}e^{-\left(1012+95\right)*\theta}}{\frac{(1012+95)^{11}}{\Gamma(1`)}*\int_{0}^{\infty}\left(\theta\right)^{11-1}e^{-\left(1012+95\right)*\theta}\delta\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
 \begin_inset Formula $\frac{\left(1012+95\right)^{11}}{\Gamma(11)}*\left(\theta\right)^{11-1}e^{-\left(1012+95\right)*\theta}\therefore y|\theta\sim gamma(11,1012+95)$
 \end_inset
 
@@ -231,7 +572,21 @@ ii.
 \end_layout
 
 \begin_layout Paragraph*
-\begin_inset Formula $p(\theta|y_{1}\ldots y_{11})=\frac{\frac{1012^{10}}{\Gamma(10)}*(\theta)^{11-1}e^{-(1012+95)\theta}}{\int\frac{1012^{10}}{\Gamma(10)}*(\theta)^{11-1}e^{-(1012+95)\theta}\delta\theta}=\frac{\frac{(1012+95)^{11}}{\Gamma(11)}*(\theta)^{11-1}e^{-(1012+95)\theta}}{\int\frac{1012^{10}}{\Gamma(11)}*(\theta)^{11-1}e^{-(1012+95)\theta}\delta\theta}=\frac{(1012+95)^{11}}{\Gamma(11)}*(\theta)^{11-1}e^{-(1012+95)\theta}$
+\begin_inset Formula $p(\theta|y_{1}\ldots y_{11})=\frac{\pi(\theta)*L(\theta|y_{11})}{\int\pi(\theta)*L(\theta|y_{11})d\theta}=\frac{\frac{1012^{10}}{\Gamma(10)}*(\theta)^{11-1}e^{-(1012+95)\theta}}{\int\frac{1012^{10}}{\Gamma(10)}*(\theta)^{11-1}e^{-(1012+95)\theta}d\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{\frac{(1012+95)^{11}}{\Gamma(11)}*(\theta)^{11-1}e^{-(1012+95)\theta}}{\int\frac{(1012+95)^{11}}{\Gamma(11)}*(\theta)^{11-1}e^{-(1012+95)\theta}d\theta}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{\left(1012+95\right)^{11}}{\Gamma(11)}*\left(\theta\right)^{11-1}e^{-\left(1012+95\right)*\theta}\therefore y|\theta\sim gamma(11,1012+95)$
 \end_inset
 
 
@@ -241,8 +596,540 @@ ii.
 Part E
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph*
+\begin_inset Formula $P(\tilde{y}=z|y_{1}.....y_{11})=\int p(\tilde{y}=z|\theta)*p(\theta|y_{1}.....y_{11})=$
+\end_inset
 
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\int\theta e^{-\theta*z}*\frac{(1012+95)^{11}}{\Gamma(11)}*(\theta)^{11-1}e^{-(1012+95)\theta}\delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\int\frac{(1012+95)^{11}}{\Gamma(11)}*(\theta)^{12-1}e^{-(1012+95+z)\theta}\delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{11*(1012+95+z)^{12}}{11*(1012+95+z)^{12}}*\int\frac{(1012+95)^{11}}{\Gamma(11)}*(\theta)^{12-1}e^{-(1012+95+z)\theta}\delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{11*(1012+95)^{11}}{(1012+95+z)^{12}}*\int\frac{(1012+95+z)^{12}}{\Gamma(12)}*(\theta)^{12-1}e^{-(1012+95+z)\theta}\delta\theta=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\frac{11*(1012+95)^{11}}{(1012+95+z)^{12}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+because
+\series default
+ 
+\begin_inset Formula $\int\frac{(1012+95+z)^{12}}{\Gamma(12)}*(\theta)^{12-1}e^{-(1012+95+z)\theta}\delta\theta\sim Gamma(12,1012+95+z)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The following is R code to generate the plot:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+z = seq(0,1000, 0.1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+density=11*(1012+95)^11/(1012+95+z)^12 
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(z,density, type = "l")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename e2e.jpeg
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Exercise 3
+\end_layout
+
+\begin_layout Subsection*
+Part A
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+From the Multiparameter lecture, slide 18
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\mu|\sigma^{2}\sim N(\mu_{0},\sigma^{2}/\kappa_{0})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\sigma^{2}\sim inv-gamma\left(\frac{\nu_{0}}{2},\frac{\nu_{0}\sigma_{0}^{2}}{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+corresponds to the joint-prior density
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(\mu,\sigma^{2})=(\sigma^{2})^{-\left(\frac{\nu_{0}+1}{2}-1\right)}exp\left\{ -\frac{\kappa_{0}}{2\sigma^{2}}\left(\frac{\nu_{0}\sigma_{0}^{2}}{\kappa_{0}}+(\mu-\mu_{0}\right)^{2}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(\mu,\sigma^{2}|y)=(\sigma^{2})^{-\left(\frac{\nu_{n}+1}{2}-1\right)}exp\left\{ -\frac{\kappa_{n}}{2\sigma^{2}}\left(\frac{\sigma_{n}^{2}}{\kappa_{n}}+(\mu-\mu_{n}\right)^{2}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\sim Normal-Inverse\; Gamma(\mu_{0},\sigma_{0}^{2}/\kappa_{0};\nu_{0}/2,\nu_{0}\sigma_{0}^{2}/2)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+In slide 20, the hyperparameters were defined as:
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\mu_{n}=\frac{\kappa_{0}}{\kappa_{0}+n}\mu_{0}+\frac{n}{\kappa_{0}+n}\bar{y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\kappa_{n}=\kappa_{0}+n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\nu_{n}=\nu_{0}+n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\nu_{n}\sigma_{n}^{2}=\nu_{0}\sigma_{0}^{2}+(n-1)s^{2}+\frac{\kappa_{0}n}{\kappa_{0}+n}(\bar{y}-\mu_{0})^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+This R code made the sample:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+school = read.table("school.dat")[,1] 
+\end_layout
+
+\begin_layout Plain Layout
+
+ybar = mean(school); s2 = var(school); n = length(school) 
+\end_layout
+
+\begin_layout Plain Layout
+
+m0 = 0; k0 = 0.1; v0 = 10; s0 = 4 
+\end_layout
+
+\begin_layout Plain Layout
+
+kn = k0 + n 
+\end_layout
+
+\begin_layout Plain Layout
+
+mn = (k0*m0 + n*ybar)/kn 
+\end_layout
+
+\begin_layout Plain Layout
+
+vn = v0 + n 
+\end_layout
+
+\begin_layout Plain Layout
+
+sn = (v0*s0 + (n-1)*s2 + (k0*n/kn)*(ybar - m0)^2)/vn 
+\end_layout
+
+\begin_layout Plain Layout
+
+phi  = rgamma(100000, vn/2, rate=vn/2*sn) 
+\end_layout
+
+\begin_layout Plain Layout
+
+sigma2 = 1/phi 
+\end_layout
+
+\begin_layout Plain Layout
+
+mu   = rnorm(100000, mn, sqrt(sigma2/kn))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part B
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Using the following R code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+quantile(mu, c(0.025,0.975))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+quantile(sigma2, c(0.025,0.975))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+The 95% credible interval for is 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is 
+\begin_inset Formula $\left(8.030065,10.813879\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+The 95% credible interval for is 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is 
+\begin_inset Formula $\left(7.711269,19.962460\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part C
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+From slide 21 of the Multi-parameter lecture, the marginal posterior distributio
+n is defined as:
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\mu|y\sim t\left(\nu_{n},\mu_{n},\frac{\sigma_{n}^{2}}{\kappa_{n}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $E(\mu|y)=\mu_{n}$
+\end_inset
+
+ since 
+\begin_inset Formula $\nu_{n}=v_{0}+n=10+25=35>1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\therefore$
+\end_inset
+
+the posterior mean is 
+\begin_inset Formula $\frac{\left(\kappa_{0}*\mu_{0}+n*\bar{y}\right)}{\kappa_{n}}=\frac{0.1*0+25*9.464}{25.1}=9.426295$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $Var(\mu|y)=\frac{\nu_{n}\sigma_{n}^{2}/\kappa_{n}}{\nu_{n}-2}=\frac{\nu_{n}}{\nu_{n}-2}*\frac{\sigma_{n}^{2}}{\kappa_{n}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+mn + qt(c(0.025,0.975), df = vn) * sqrt(sn/kn)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The 95% credible interval is 
+\begin_inset Formula $\left(8.037325,10.815264\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Part D 
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $p(\tilde{y}|y_{1}\ldots y_{n})=\int_{\sigma^{2}}\int_{\mu}f(\tilde{y}|\mu,\sigma^{2})*f(\mu,\sigma^{2}|y_{1}\ldots y_{n})d\mu\; d\sigma^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+where 
+\begin_inset Formula $f(\tilde{y}|\mu,\sigma^{2})\sim N(\mu,\sigma^{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The first step involves obtaining samples of 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ from the joint posterior distribution, which was done in Part A.
+ The second step involves inputing those sampled 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ into 
+\begin_inset Formula $f(\tilde{y}|\mu,\sigma^{2})\sim N(\mu,\sigma^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+This is the R code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+partd = rnorm(100000, mu, sqrt(sigma2)) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part E
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+From Slide 21, the posterior predictive distribution for a future observation
+ is 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\tilde{y}|y\sim t\left(\nu_{n},\mu_{n},\sigma_{n}^{2}\left[1+\frac{1}{\kappa_{n}}\right]\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+parte = mn + rt(100000, df = vn)*sqrt(sn*(1+1/kn)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+qqplot(partd,parte)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename e3e.jpeg
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Based in the qqplot, the distributions sampled from Part D and Part E are
+ equivalent.
+ This is because the points indicate that that is a direct relationship
+ (no weights) between Part D and Part E.
 \end_layout
 
 \end_body
