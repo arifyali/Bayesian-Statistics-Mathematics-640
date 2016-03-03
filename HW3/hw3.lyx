@@ -1,0 +1,1019 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\headheight 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Mathematics 640 Homework 3
+\end_layout
+
+\begin_layout Author
+Arif Ali
+\end_layout
+
+\begin_layout Date
+03/03/16
+\end_layout
+
+\begin_layout Section*
+Exercise 1
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\mathbf{y|\boldsymbol{\mu,}\boldsymbol{\Sigma}}\sim N\left(\boldsymbol{\mu,}\boldsymbol{\Sigma}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\boldsymbol{\mu}\sim N\left(\boldsymbol{\mu_{0},\boldsymbol{\triangle_{0}}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Note: we should focus solely on the the exponent of the multi-normal distributio
+n.
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Since the numeratpr and the formula within the intergral of the denominator
+ are identical please assume the steps approached are done for both.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*\sum_{i=1}^{n}\left(y_{i}-\mathbf{\boldsymbol{\mu}}\right)^{T}*\mathbf{\boldsymbol{\Sigma}}^{-1}*\left(y_{i}-\boldsymbol{\mu}\right)\right\} *exp\left\{ -\frac{1}{2}\left(-\boldsymbol{\mu}_{0}\right)^{T}\boldsymbol{\triangle}_{0}^{-1}\left(\boldsymbol{\mu}-\boldsymbol{\mu}_{0}\right)\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*\sum_{i=1}^{n}y_{i}^{T}\boldsymbol{\Sigma}^{-1}y_{i}-\mu^{T}\boldsymbol{\Sigma}^{-1}y_{i}-y_{i}^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}+\boldsymbol{\mu}^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}\right\} *exp\left\{ -\frac{1}{2}\left(\boldsymbol{\mu}-\boldsymbol{\mu}_{0}\right)^{T}\boldsymbol{\triangle}_{0}^{-1}\left(\boldsymbol{\mu}-\boldsymbol{\mu}_{0}\right)\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*\left[\sum_{i=1}^{n}y_{i}^{T}\boldsymbol{\Sigma}^{-1}y_{i}-\sum_{i=1}^{n}\boldsymbol{\mu}^{T}\boldsymbol{\Sigma}^{-1}y_{i}-\sum_{i=1}^{n}y_{i}^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}+\sum_{i=1}^{n}\boldsymbol{\mu}^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}+\left(\boldsymbol{\mu}-\boldsymbol{\mu}_{0}\right)^{T}\boldsymbol{\triangle}_{0}^{-1}\left(\boldsymbol{\mu}-\boldsymbol{\mu}_{0}\right)\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*\left[\sum_{i=1}^{n}y_{i}^{T}\boldsymbol{\Sigma}^{-1}y_{i}-\boldsymbol{\mu}^{T}\boldsymbol{\Sigma}^{-1}n\bar{y}-n\bar{y}{}^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}+n\boldsymbol{\mu}^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}+\left(\boldsymbol{\mu}-\boldsymbol{\mu}_{0}\right)^{T}\boldsymbol{\triangle}_{0}^{-1}\left(\boldsymbol{\mu}-\boldsymbol{\mu}_{0}\right)\right]\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Since 
+\begin_inset Formula $\sum_{i=1}^{n}y_{i}^{T}\boldsymbol{\Sigma}^{-1}y_{i}$
+\end_inset
+
+ does not contain 
+\begin_inset Formula $\mu$
+\end_inset
+
+, it can be factored out 
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*\left(-\boldsymbol{\mu}^{T}\boldsymbol{\Sigma}^{-1}n\bar{y}-n\bar{y}{}^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}+n\mu^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}+\boldsymbol{\mu}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}-\boldsymbol{\mu}_{0}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}-\boldsymbol{\mu}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}+\boldsymbol{\mu}_{0}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}\right)\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*\left(-\boldsymbol{\mu}^{T}\boldsymbol{\Sigma}^{-1}n\bar{y}-n\bar{y}{}^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}+n\mu^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}+\boldsymbol{\mu}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}-\boldsymbol{\mu}_{0}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}-\boldsymbol{\mu}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}+\boldsymbol{\mu}_{0}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Since 
+\begin_inset Formula $\boldsymbol{\mu}_{0}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}$
+\end_inset
+
+ does not contain 
+\begin_inset Formula $\mu$
+\end_inset
+
+, it can be factored out
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*\left(-\boldsymbol{\mu}^{T}\boldsymbol{\Sigma}^{-1}n\bar{y}-n\bar{y}{}^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}+n\mu^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}+\boldsymbol{\mu}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}-\boldsymbol{\mu}_{0}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}-\boldsymbol{\mu}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}\right)\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*\left(\left(-n\bar{y}{}^{T}\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}-\boldsymbol{\mu}_{0}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}\right)+\left(\boldsymbol{\mu}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}+\boldsymbol{\mu}^{T}n\boldsymbol{\Sigma}^{-1}\boldsymbol{\mu}\right)+\left(-\boldsymbol{\mu}^{T}\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}-\boldsymbol{\mu}^{T}\boldsymbol{\Sigma}^{-1}n\bar{y}\right)\right)\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*\left(-\left(\bar{y}{}^{T}n\boldsymbol{\Sigma}^{-1}+\boldsymbol{\mu}_{0}^{T}\boldsymbol{\triangle}_{0}^{-1}\right)\boldsymbol{\mu}+\boldsymbol{\mu}^{T}\left(\boldsymbol{\triangle}_{0}^{-1}+n\boldsymbol{\Sigma}^{-1}\right)\boldsymbol{\mu}-\boldsymbol{\mu}^{T}\left(\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}+n\boldsymbol{\Sigma}^{-1}\bar{y}\right)\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Since both 
+\series default
+
+\begin_inset Formula $\boldsymbol{\triangle}_{0}^{-1}$
+\end_inset
+
+ 
+\series medium
+and
+\series default
+ 
+\begin_inset Formula $\boldsymbol{\Sigma}^{-1}$
+\end_inset
+
+ 
+\series medium
+are symmetric
+\series default
+ 
+\begin_inset Formula $\left(\boldsymbol{\triangle}_{0}^{-1}\right)^{T}=\boldsymbol{\triangle}_{0}^{-1}$
+\end_inset
+
+ 
+\series medium
+and
+\series default
+ 
+\begin_inset Formula $\left(\boldsymbol{\Sigma}{}^{-1}\right)^{T}=\boldsymbol{\Sigma}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*\left(-\left(\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}+n\boldsymbol{\Sigma}^{-1}\bar{y}\right)^{T}\boldsymbol{\mu}+\boldsymbol{\mu}^{T}\left(\boldsymbol{\triangle}_{0}^{-1}+n\boldsymbol{\Sigma}^{-1}\right)\boldsymbol{\mu}-\boldsymbol{\mu}^{T}\left(\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}+n\boldsymbol{\Sigma}^{-1}\bar{y}\right)\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Let 
+\begin_inset Formula $X=\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}+n\boldsymbol{\Sigma}^{-1}\bar{y}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y=\boldsymbol{\triangle}_{0}^{-1}+n\boldsymbol{\Sigma}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+note: Y is basically 
+\begin_inset Formula $\triangle_{n}^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $u_{n}=Y^{-1}X$
+\end_inset
+
+ so the goal is to manipulate in the mutlivariate normal.
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*\left(-\left(X\right)^{T}\boldsymbol{\mu}+\boldsymbol{\mu}^{T}\left(Y\right)\boldsymbol{\mu}-\boldsymbol{\mu}^{T}\left(X\right)\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+multiply the numerator and denominator by 
+\begin_inset Formula $exp\left\{ -\frac{1}{2}*X^{T}Y^{-1}X\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $exp\left\{ -\frac{1}{2}\left(-\boldsymbol{\mu}\left(X\right)^{T}-\boldsymbol{\mu}^{T}\left(X\right)+\boldsymbol{\mu}^{T}\left(Y\right)\boldsymbol{\mu}\right)\right\} *exp\left\{ -\frac{1}{2}*X^{T}Y^{-1}X\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}\left(-\boldsymbol{\mu}\left(X\right)^{T}-\boldsymbol{\mu}^{T}\left(X\right)+\boldsymbol{\mu}^{T}\left(Y\right)\boldsymbol{\mu}+X^{T}Y^{-1}X\right)\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}\left(\boldsymbol{\mu}^{T}\left(Y\right)\boldsymbol{\mu}-\boldsymbol{\mu}\left(X\right)^{T}-\boldsymbol{\mu}^{T}\left(X\right)+X^{T}Y^{-1}X\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $I=Y^{-1}Y=YY^{-1}$
+\end_inset
+
+ because 
+\begin_inset Formula $Y$
+\end_inset
+
+ is symmetric and invertible
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}\left(\boldsymbol{\mu}^{T}\left(Y\right)\boldsymbol{\mu}-\boldsymbol{\mu}Y\left(Y^{-1}X\right)^{T}-\boldsymbol{\mu}^{T}Y\left(Y^{-1}X\right)+\left(Y^{-1}X\right)^{T}Y\left(Y^{-1}X\right)\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Let 
+\begin_inset Formula $\triangle_{n}^{-1}=Y=\mathbf{\boldsymbol{\Sigma}}^{-1}n+\boldsymbol{\triangle}_{0}^{-1}=\boldsymbol{\triangle}_{0}^{-1}+n\mathbf{\boldsymbol{\Sigma}}^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{n}=Y^{-1}X=\left(\boldsymbol{\triangle}_{0}^{-1}+n\mathbf{\boldsymbol{\Sigma}}^{-1}\right)*\left(\mathbf{\boldsymbol{\Sigma}}^{-1}ny+\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}\left(\boldsymbol{\mu}^{T}\triangle_{n}^{-1}\boldsymbol{\mu}-\boldsymbol{\mu}\triangle_{n}^{-1}\mu_{n}^{T}-\boldsymbol{\mu}^{T}\triangle_{n}^{-1}\mu_{n}+\mu_{n}^{T}\triangle_{n}^{-1}\mu_{n}\right)\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}\left(\left(\boldsymbol{\mu}^{T}-\mu_{n}^{T}\right)\triangle_{n}^{-1}\left(\boldsymbol{\mu}-\mu_{n}\right)\right)\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $exp\left\{ -\frac{1}{2}\left(\left(\boldsymbol{\mu}-\mu_{n}\right)^{T}\triangle_{n}^{-1}\left(\boldsymbol{\mu}-\mu_{n}\right)\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Based on this kernel, it can be concluded that
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\mu|Y\sim N\left(\mu_{n},\triangle_{n}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\triangle_{n}^{-1}=\mathbf{\boldsymbol{\Sigma}}^{-1}n+\boldsymbol{\triangle}_{0}^{-1}=\boldsymbol{\triangle}_{0}^{-1}+n\mathbf{\boldsymbol{\Sigma}}^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{n}=\left(\boldsymbol{\triangle}_{0}^{-1}+n\mathbf{\boldsymbol{\Sigma}}^{-1}\right)*\left(\mathbf{\boldsymbol{\Sigma}}^{-1}ny+\boldsymbol{\triangle}_{0}^{-1}\boldsymbol{\mu}_{0}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Exercise 2
+\end_layout
+
+\begin_layout Subsection*
+Part A
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Under 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+: the following are true
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\pi_{1}=\pi_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $X_{j}|\pi_{1}\sim Binomial(n_{j},\pi_{1})$
+\end_inset
+
+ where 
+\begin_inset Formula $j=1,2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\pi|H_{0}\sim Beta(a,b)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+under the assumption that 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are independent:
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(x_{1},x_{2}|\pi_{1},\pi_{2})=p(x_{1}|\pi_{1})*p(x_{2}|\pi_{2})\left[\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\pi_{1}^{x_{1}}*(1-\pi_{1})^{n_{1}-x_{1}}\right]*\left[\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\pi_{2}^{x_{2}}*(1-\pi_{2})^{n_{2}-x_{2}}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+since 
+\series default
+
+\begin_inset Formula $\pi_{1}=\pi_{2}$
+\end_inset
+
+ 
+\series medium
+under
+\series default
+ 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(x_{1},x_{2}|\pi)=p(x_{1}|\pi)*p(x_{2}|\pi)\left[\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\pi^{x_{1}}*(1-\pi)^{n_{1}-x_{1}}\right]*\left[\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\pi^{x_{2}}*(1-\pi)^{n_{2}-x_{2}}\right]=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)*\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\pi^{x_{1}+x_{2}}*(1-\pi)^{n_{1}-x_{1}+n_{2}-x_{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\series medium
+
+\begin_inset Formula $\pi|H_{0}\sim Beta(a,b)$
+\end_inset
+
+ then
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $p(x_{1},x_{2}|H_{0})=\int_{\pi}p(x_{1},x_{2}|\pi)*p(\pi|H_{0})d\pi=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\int\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\pi^{x_{1}+x_{2}}(1-\pi)^{n_{1}-x_{1}+n_{2}-x_{2}}\left[\frac{1}{B(a,b)}\pi^{a-1}(1-\pi)^{b-1}\right]d\pi=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\frac{1}{B(a,b)}\int\pi^{x_{1}+x_{2}+a-1}(1-\pi)^{n_{1}-x_{1}+n_{2}-x_{2}+b-1}d\pi=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\frac{B(x_{1}+x_{2}+a,n_{1}-x_{1}+n_{2}-x_{2}+b)}{B(a,b)}\int\frac{1}{B(x_{1}+x_{2}+a,n_{1}-x_{1}+n_{2}-x_{2}+b)}\pi^{x_{1}+x_{2}+a-1}(1-\pi)^{n_{1}-x_{1}+n_{2}-x_{2}+b-1}d\pi=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\frac{B(x_{1}+x_{2}+a,n_{1}-x_{1}+n_{2}-x_{2}+b)}{B(a,b)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part B
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Under 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+: the following are true
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\pi_{1}\not=\pi_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $X_{j}|\pi_{1}\sim Binomial(n_{j},\pi_{1})$
+\end_inset
+
+ where 
+\begin_inset Formula $j=1,2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\pi|H_{1}\sim Beta(a,b)$
+\end_inset
+
+ where 
+\begin_inset Formula $j=1,2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $ $
+\end_inset
+
+
+\series medium
+under the assumption that 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are independent:
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $p(x_{1},x_{2}|\pi_{1},\pi_{2})=p(x_{1}|\pi_{1})*p(x_{2}|\pi_{2})=\left[\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\pi_{1}^{x_{1}}*(1-\pi_{1})^{n_{1}-x_{1}}\right]*\left[\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\pi_{2}^{x_{2}}*(1-\pi_{2})^{n_{2}-x_{2}}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $p(x_{1},x_{2}|H_{1})=\int_{\pi_{1}}\int_{\pi_{2}}p(x_{1},x_{2}|\pi_{1},\pi_{2})*p(\pi_{1}|H_{1})*p(\pi_{2}|H_{1})d\pi_{2}d\pi_{1}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\int_{\pi_{1}}\int_{\pi_{2}}\left[\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\pi_{1}^{x_{1}}*(1-\pi_{1})^{n_{1}-x_{1}}\right]*\left[\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\pi_{2}^{x_{2}}*(1-\pi_{2})^{n_{2}-x_{2}}\right]*$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\left(\frac{1}{B(a,b)}\pi_{1}^{a-1}(1-\pi_{1})^{b-1}\right)*\left(\frac{1}{B(a,b)}\pi_{2}^{a-1}(1-\pi_{2})^{b-1}\right)d\pi_{2}d\pi_{1}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\left(\frac{1}{B(a,b)}\right)^{2}\int_{\pi_{1}}\pi_{1}^{x_{1}}*(1-\pi_{1})^{n_{1}-x_{1}}*\left(\pi_{1}^{a-1}(1-\pi_{1})^{b-1}\right)*$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\int_{\pi_{2}}\left[\pi_{2}^{x_{2}}*(1-\pi_{2})^{n_{2}-x_{2}}\right]*\left(\pi_{2}^{a-1}(1-\pi_{2})^{b-1}\right)d\pi_{2}d\pi_{1}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\left(\frac{1}{B(a,b)}\right)^{2}\int_{\pi_{1}}\pi_{1}^{x_{1}+a-1}*(1-\pi_{1})^{n_{1}-x_{1}+b-1}\int_{\pi_{2}}\pi_{2}^{x_{2}+a-1}*(1-\pi_{2})^{n_{2}-x_{2}+b-1}d\pi_{2}d\pi_{1}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\left(\frac{1}{B(a,b)}\right)^{2}B(x_{2}+a,n_{2}-x_{2}+b)*B(x_{1}+a,n_{1}-x_{1}+b)\int_{\pi_{1}}\frac{1}{B(x_{1}+a,n_{1}-x_{1}+b)}\pi_{1}^{x_{1}+a-1}*$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $(1-\pi_{1})^{n_{1}-x_{1}+b-1}\int_{\pi_{2}}\frac{1}{B(x_{2}+a,n_{2}-x_{2}+b)}\pi_{2}^{x_{2}+a-1}*(1-\pi_{2})^{n_{2}-x_{2}+b-1}d\pi_{2}d\pi_{1}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\left(\frac{1}{B(a,b)}\right)^{2}B(x_{2}+a,n_{2}-x_{2}+b)*B(x_{1}+a,n_{1}-x_{1}+b)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part C
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p(H_{0}|x_{1},x_{2})=\frac{p(H_{0})*p(x_{1},x_{2}|H_{0})}{p(x_{1},x_{2})}=\frac{p(H_{0})*p(x_{1},x_{2}|H_{0})}{p(x_{1},x_{2}|H_{0})*p(H_{0})+p(x_{1},x_{2}|H_{1})*p(H_{1})}=\frac{ω*p(x_{1},x_{2}|H_{0})}{p(x_{1},x_{2}|H_{0})*ω+p(x_{1},x_{2}|H_{1})*(1-ω)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part D
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $BF=\frac{p(H_{1}|x_{1},x_{2})/p(H_{0}|x_{1},x_{2})}{p(H_{1})/p(H_{2})}=\frac{\frac{\left(\text{1-ω}\right)*p(x_{1},x_{2}|H_{1})}{p(x_{1},x_{2}|H_{0})*\text{ω}+p(x_{1},x_{2}|H_{1})*(1-\text{ω})}/\frac{\text{ω}*p(x_{1},x_{2}|H_{0})}{p(x_{1},x_{2}|H_{0})*\text{ω}+p(x_{1},x_{2}|H_{1})*(1-\text{ω})}}{(\text{1-ω})/\text{ω}}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\left(\text{1-ω}\right)*p(x_{1},x_{2}|H_{1})/\text{ω}*p(x_{1},x_{2}|H_{0})}{(\text{1-ω})/\text{ω}}=\frac{p(x_{1},x_{2}|H_{1})}{p(x_{1},x_{2}|H_{0})}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\left(\frac{1}{B(a,b)}\right)^{2}B(x_{2}+a,n_{2}-x_{2}+b)*B(x_{1}+a,n_{1}-x_{1}+b)}{\left(\begin{array}{c}
+n_{1}\\
+x_{1}
+\end{array}\right)\left(\begin{array}{c}
+n_{2}\\
+x_{2}
+\end{array}\right)\frac{B(x_{1}+x_{2}+a,n_{1}-x_{1}+n_{2}-x_{2}+b)}{B(a,b)}}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{B(x_{2}+a,n_{2}-x_{2}+b)*B(x_{1}+a,n_{1}-x_{1}+b)}{B(x_{1}+x_{2}+a,n_{1}-x_{1}+n_{2}-x_{2}+b)}*\left(\frac{1}{B(a,b)}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part E
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $log\left(\frac{B(x_{2}+a,n_{2}-x_{2}+b)*B(x_{1}+a,n_{1}-x_{1}+b)}{B(x_{1}+x_{2}+a,n_{1}-x_{1}+n_{2}-x_{2}+b)}*\left(\frac{1}{B(a,b)}\right)\right)=log\left(\frac{B(x_{2}+a,n_{2}-x_{2}+b)*B(x_{1}+a,n_{1}-x_{1}+b)}{B(x_{1}+x_{2}+a,n_{1}-x_{1}+n_{2}-x_{2}+b)}\right)-log(B(a,b))=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $log(B(x_{2}+a,n_{2}-x_{2}+b))+log(B(x_{1}+a,n_{1}-x_{1}+b))-log\left(B(x_{1}+x_{2}+a,n_{1}-x_{1}+n_{2}-x_{2}+b)\right)-log(B(a,b))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+logB = function(a,b){   
+\end_layout
+
+\begin_layout Plain Layout
+
+	lgamma(a)+lgamma(b)-lgamma(a+b) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+x1=46 
+\end_layout
+
+\begin_layout Plain Layout
+
+n1=143 
+\end_layout
+
+\begin_layout Plain Layout
+
+x2=30 
+\end_layout
+
+\begin_layout Plain Layout
+
+n2 = 151 
+\end_layout
+
+\begin_layout Plain Layout
+
+omega = 0.05 
+\end_layout
+
+\begin_layout Plain Layout
+
+a=2 
+\end_layout
+
+\begin_layout Plain Layout
+
+b=8
+\end_layout
+
+\begin_layout Plain Layout
+
+exp(logB(x2+a,n2-x2+b)+logB(x1+a,n1-x1+b)-logB(x1+x2+a,n1-x1+n2-x2+b)-logB(a,b))
+\end_layout
+
+\begin_layout Plain Layout
+
+4.534823
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Under the Kass & Raftery – scale of evidence in favor of 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+, the interpretation is postive since 
+\begin_inset Formula $3<4.534823\leq20$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part F
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+prop.test(x=c(x1,x2),n=c(n1,n2))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	2-sample test for equality of proportions with 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	continuity correction
+\end_layout
+
+\begin_layout Plain Layout
+
+data:  c(x1, x2) out of c(n1, n2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+X-squared = 5.1733, df = 1, p-value = 0.02294 
+\end_layout
+
+\begin_layout Plain Layout
+
+alternative hypothesis: two.sided 
+\end_layout
+
+\begin_layout Plain Layout
+
+95 percent confidence interval:  
+\end_layout
+
+\begin_layout Plain Layout
+
+0.01663715 0.22936850 sample estimates:    
+\end_layout
+
+\begin_layout Plain Layout
+
+prop 1    prop 2  0.3216783 0.1986755 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+The p-value is significant, which leads us to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ in favor of 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
