@@ -1,0 +1,160 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\headheight 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula $\ensuremath{logit(P(Y_{i}=1|\alpha,\beta,x_{i}))=log(P(Y_{i}=1|\alpha,\beta,x_{i}))-log(1-P(Y_{i}=1|\alpha,\beta,x_{i}))=\alpha+\beta*x_{i}\implies}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ensuremath{\frac{(P(Y_{i}=1|\alpha,\beta,x_{i}))}{1-(P(Y_{i}=1|\alpha,\beta,x_{i}))}=exp(\alpha+\beta*x_{i})\implies}\ensuremath{(P(Y_{i}=1|\alpha,\beta,x_{i}))=\frac{exp(\alpha+\beta*x_{i})}{1+exp(\alpha+\beta*x_{i})}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ensuremath{\therefore(P(Y_{i}=0|\alpha,\beta,x_{i}))=\frac{1}{1+exp(\alpha+\beta*x_{i})}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(y_{i}|\alpha,\beta,x_{i})=\left(\frac{exp(\alpha+\beta*x_{i})}{1+exp(\alpha+\beta*x_{i})}\right)^{y_{i}}*\left(\frac{1}{1+exp(\alpha+\beta*x_{i})}\right)^{1-y_{i}}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\frac{exp(\alpha+\beta*x_{i})}{1+exp(\alpha+\beta*x_{i})}\right)^{y_{i}}*\left(1+exp(\alpha+\beta*x_{i})\right)^{y_{i}}\left(\frac{1}{1+exp(\alpha+\beta*x_{i})}\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(exp(\alpha+\beta*x_{i})\right)^{y_{i}}*\left(\frac{1}{1+exp(\alpha+\beta*x_{i})}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ensuremath{f(\boldsymbol{y}|\alpha,\beta,\boldsymbol{x})=\prod_{i=1}^{n}\left(exp(\alpha+\beta*x_{i})\right)^{y_{i}}*\left(\frac{1}{1+exp(\alpha+\beta*x_{i})}\right)=}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $exp\left\{ log\left(\prod_{i=1}^{n}\left(exp(\alpha+\beta*x_{i})\right)^{y_{i}}*\left(\frac{1}{1+exp(\alpha+\beta*x_{i})}\right)\right)\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $exp\left\{ \sum_{i=1}^{n}\left[log\left(exp(\alpha+\beta*x_{i})\right)^{y_{i}}-log\left(1+exp(\alpha+\beta*x_{i})\right)\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $exp\left\{ \sum_{i=1}^{n}\left[y_{i}*log\left(exp(\alpha+\beta*x_{i})\right)-log\left(1+exp(\alpha+\beta*x_{i})\right)\right]\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{p(\boldsymbol{y}|\theta^{*},\boldsymbol{x})*p(\theta^{*})}{p(\boldsymbol{y}|\theta^{t-1},\boldsymbol{x})*p(\theta^{t-1})}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{exp\left\{ \sum_{i=1}^{n}\left[y_{i}*log\left(exp(\alpha^{*}+\beta^{*}*x_{i})\right)-log\left(1+exp(\alpha^{*}+\beta^{*}*x_{i})\right)\right]\right\} }{exp\left\{ \sum_{i=1}^{n}\left[y_{i}*log\left(exp(\alpha^{t-1}+\beta^{t-1}*x_{i})\right)-log\left(1+exp(\alpha^{t-1}+\beta^{t-1}*x_{i})\right)\right]\right\} }*\frac{p(\theta^{*})}{p(\theta^{t-1})}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $exp\left\{ \sum_{i=1}^{n}\left[y_{i}*log\left(exp(\alpha^{*}+\beta^{*}*x_{i})\right)-log\left(1+exp(\alpha^{*}+\beta^{*}*x_{i})\right)\right]-\sum_{i=1}^{n}\left[y_{i}*log\left(exp(\alpha^{t-1}+\beta^{t-1}*x_{i})\right)-log\left(1+exp(\alpha^{t-1}+\beta^{t-1}*x_{i})\right)\right]\right\} *\frac{p(\theta^{*})}{p(\theta^{t-1})}=$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

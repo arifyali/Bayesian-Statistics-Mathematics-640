@@ -1,0 +1,259 @@
+\documentclass{article}
+\usepackage{amscd, amssymb, amsmath, verbatim, setspace}
+\usepackage[left=1.0in, right=1.0in, top=1.0in, bottom=1.0in]{geometry}
+\usepackage{mathrsfs}
+\usepackage{listings}
+<<echo=FALSE>>=
+  library(knitr)
+opts_knit$set(concordance=TRUE)
+opts_chunk$set(background="white", highlight=FALSE, fig.keep="high", out.width="0.50\\linewidth")
+@
+  \begin{document}
+
+\begin{flushright}
+Arif Ali\\
+Math 640 Bayesian Statistics\\
+April 21, 2016\\
+\end{flushright}
+
+\begin{center}
+\LARGE\textbf{Homework \#5}
+  \end{center}
+  \section*{Exercise 1}
+  \subsection*{Part A}
+The posterior means can be calculated the following way.
+<<>>=
+set.seed(4231423)
+library(MASS)
+data(UScrime)
+library(LearnBayes)
+
+y = UScrime$y; n=length(y)
+X = as.matrix(cbind(rep(1,n), UScrime[,-ncol(UScrime)]))
+
+T = 1e4; k=dim(X)[2]; beta = matrix(NA, T, k)
+g = n;  nu0 = 2;  s20 = 1
+
+XtX.inv = solve(t(X)%*%X)
+Sg = t(y)%*%(diag(1,n) - g/(g+1)*X%*%XtX.inv%*%t(X))%*%y
+v = g/(g+1)*XtX.inv
+m = v%*%t(X)%*%y
+
+sigma2 = 1/rgamma(T, (nu0+n)/2, (nu0*s20+Sg)/2 )
+for(t in 1:T) {
+  beta[t,] = mvrnorm(1, m, sigma2[t]*v)
+}
+
+names(beta) = c("(Intercept)",names(UScrime)[-ncol(UScrime)])
+Beta_means = apply(beta, 2, mean)
+names(Beta_means) = c("(Intercept)",names(UScrime)[-ncol(UScrime)])
+Beta_means
+@
+The confidence intervals are
+<<>>=
+beta.ci = apply(beta, 2, quantile, c(0.025, 0.975))
+colnames(beta.ci) = c("(Intercept)",names(UScrime)[-ncol(UScrime)])
+t(beta.ci)
+@
+The least square values for $\beta$ can be calculated using the lm function.
+<<>>=
+Crime.fit = lm(y~.,data= UScrime)
+@
+With respect the the differences between the Bayesian Method and the least square methods, we can determine the difference with the following.
+<<>>=
+Beta_means - Crime.fit$coefficients
+@
+It's interesting to see that the difference between the posteior means and the values of $\beta$ calculated by the least squares method are very close. 
+<<>>=
+t(beta.ci) - confint(Crime.fit)
+@
+The difference between the Confidence Interval following the same pattern as with the means. That is attributed to the intercept and Prob; however, based on the values obtained, the differences aren't as significant.
+\subsection*{Part B}
+<<>>=
+Problem1b = function(seed = F, graph = F){
+  if(seed){
+    set.seed(seed)
+    }
+  train = sample(nrow(UScrime), nrow(UScrime)*0.5)
+  UScrime.train = UScrime[train,]
+  UScrime.test = UScrime[-train,]
+  Crimeb.fit = lm(y~.,data= UScrime.train)
+  Crimeb.fit$coefficients
+  Crimeb.fittedvalues = predict(Crimeb.fit, UScrime.test)
+
+  y = UScrime.train$y; n=length(y)
+  X = as.matrix(cbind(rep(1,n), UScrime.train[,-ncol(UScrime.train)]))
+
+  T = 1e4; k=dim(X)[2]; beta = matrix(NA, T, k)
+  g = n;  nu0 = 2;  s20 = 1
+
+  XtX.inv = solve(t(X)%*%X)
+  Sg = t(y)%*%(diag(1,n) - g/(g+1)*X%*%XtX.inv%*%t(X))%*%y
+  v = g/(g+1)*XtX.inv
+  m = v%*%t(X)%*%y
+
+  sigma2 = 1/rgamma(T, (nu0+n)/2, (nu0*s20+Sg)/2 )
+  for(t in 1:T) {
+    beta[t,] = mvrnorm(1, m, sigma2[t]*v)
+  }
+
+  Beta_means = apply(beta, 2, mean)
+  names(Beta_means) = c("(Intercept)",names(UScrime)[-ncol(UScrime)])
+  Beta_means
+  bayesian_predictions = (as.matrix(UScrime.test[,-ncol(UScrime.test)])%*%(Beta_means[-1])+Beta_means[1])[,1]
+  
+  mean((bayesian_predictions - UScrime.test$y)^2)
+  
+  if(graph){
+    par(mfrow=c(1,2))
+    plot(UScrime.test$y, Crimeb.fittedvalues, 
+         main = "least-squares regression", 
+         xlab = "observations", ylab = expression(hat(y[i])))
+    plot(UScrime.test$y, bayesian_predictions, 
+         main = "bayesian posterior means regression", 
+         xlab = "observations", ylab = expression(hat(y[i])))
+    
+  }
+  
+  results = list(Crimeb.fit$coefficients, mean((Crimeb.fittedvalues-UScrime.test$y)^2),
+                 Beta_means,mean((bayesian_predictions - UScrime.test$y)^2))
+  names(results) = c("least-squares regression coefficients", "MSE", 
+                     " posterior mean", "MSE posterior mean")
+  return(results)
+}
+
+Problem1b(1e8, T)
+@
+From the result, the method using the posterior mean performs better than one using the least squares estimates. 
+\subsection*{Part C}
+<<>>=
+Problem1c = matrix(data = NA, nrow = 100, ncol = 2)
+names(Problem1c) = c("least-squares regression MSE", "MSE  posterior mean")
+for(i in 1:100){
+  Problem1ci = Problem1b()
+  Problem1c[i,]= c(Problem1ci[[2]], Problem1ci[[4]])
+}
+apply(Problem1c,2,mean, na.rm = T)
+@
+\section*{Exercise 2}
+\subsection*{Part A}
+$logit(P(Y_{i}=1|\alpha,\beta,x_{i}))=log(P(Y_{i}=1|\alpha,\beta,x_{i}))-log(1-P(Y_{i}=1|\alpha,\beta,x_{i}))=\alpha+\beta*x_{i}\implies$
+
+$\frac{(P(Y_{i}=1|\alpha,\beta,x_{i}))}{1-(P(Y_{i}=1|\alpha,\beta,x_{i}))}=exp(\alpha+\beta*x_{i})\implies$
+$(P(Y_{i}=1|\alpha,\beta,x_{i}))=\frac{exp(\alpha+\beta*x_{i})}{1+exp(\alpha+\beta*x_{i})}$
+
+$\therefore (P(Y_{i}=0|\alpha,\beta,x_{i})) = \frac{1}{1+exp(\alpha+\beta*x_{i})}$
+
+$f(y_{i}|\alpha,\beta,x_{i})=\left(\frac{exp(\alpha+\beta*x_{i})}{1+exp(\alpha+\beta*x_{i})}\right)^{y_{i}}*\left(\frac{1}{1+exp(\alpha+\beta*x_{i})}\right)^{1-y_{i}}=$
+
+$\left(\frac{exp(\alpha+\beta*x_{i})}{1+exp(\alpha+\beta*x_{i})}\right)^{y_{i}}*\left(1+exp(\alpha+\beta*x_{i})\right)^{y_{i}}\left(\frac{1}{1+exp(\alpha+\beta*x_{i})}\right)=\left(exp(\alpha+\beta*x_{i})\right)^{y_{i}}*\left(\frac{1}{1+exp(\alpha+\beta*x_{i})}\right)$
+
+$\ensuremath{f(\boldsymbol{y}|\alpha,\beta,\boldsymbol{x})=\prod_{i=1}^{n}\left(exp(\alpha+\beta*x_{i})\right)^{y_{i}}*\left(\frac{1}{1+exp(\alpha+\beta*x_{i})}\right)=}$
+
+$exp\left\{ log\left(\prod_{i=1}^{n}\left(exp(\alpha+\beta*x_{i})\right)^{y_{i}}*\left(\frac{1}{1+exp(\alpha+\beta*x_{i})}\right)\right)\right\} =$
+
+$exp\left\{ \sum_{i=1}^{n}\left[log\left(exp(\alpha+\beta*x_{i})\right)^{y_{i}}-log\left(1+exp(\alpha+\beta*x_{i})\right)\right]\right\} =$
+
+$exp\left\{ \sum_{i=1}^{n}\left[y_{i}*log\left(exp(\alpha+\beta*x_{i})\right)-log\left(1+exp(\alpha+\beta*x_{i})\right)\right]\right\}$
+\subsection*{Part B}
+$r=\frac{p(\theta^{*}|\boldsymbol{y},\boldsymbol{x})}{{p(\theta^{t-1}|\boldsymbol{y},\boldsymbol{x})}}=$
+
+$=\frac{p(\boldsymbol{y}|\theta^{*},\boldsymbol{x})*p(\theta^{*})}{p(\boldsymbol{y}|\theta^{t-1},\boldsymbol{x})*p(\theta^{t-1})}=$
+
+$\frac{exp\left\{ \sum_{i=1}^{n}\left[y_{i}*log\left(exp(\alpha^{*}+\beta^{*}*x_{i})\right)-log\left(1+exp(\alpha^{*}+\beta^{*}*x_{i})\right)\right]\right\} }{exp\left\{ \sum_{i=1}^{n}\left[y_{i}*log\left(exp(\alpha^{t-1}+\beta^{t-1}*x_{i})\right)-log\left(1+exp(\alpha^{t-1}+\beta^{t-1}*x_{i})\right)\right]\right\} }*\frac{p(\alpha^{*})*p(\beta^{*})}{p(\alpha^{t-1})*p(\beta^{t-1})}$
+
+<<>>=
+library(MASS)
+msparrownest <- read.table("~/Documents/Georgetown/Bayesian-Statistics-Mathematics-640/HW5/msparrownest.dat", quote="\"", comment.char="")
+names(msparrownest) = c("nests", "wingspan")
+y = msparrownest$nests; n=length(y)
+x = msparrownest$wingspan
+X = as.matrix(cbind(rep(1,n), msparrownest[,"wingspan"]))
+proposal_var = n*mean(y)*(1-mean(y))*solve(t(X)%*%X)
+
+ratio = function(thetastar, theta_pre){
+  return(exp(sum(y*log(exp(thetastar[1]+thetastar[2]*x))-
+            log(1+exp(thetastar[1]+thetastar[2]*x))))/
+    (exp(sum(y*log(exp(theta_pre[1]+theta_pre[2]*x))-
+               log(1+exp(theta_pre[1]+theta_pre[2]*x)))))*
+      dnorm(thetastar[1], 0,10)*dnorm(thetastar[2],0,10)/
+      (dnorm(theta_pre[1], 0,10)*dnorm(theta_pre[2],0,10)))
+}
+  
+
+T = 1e5
+theta = matrix(nrow=T, ncol=2)
+theta[1,] = c(0,0)
+accept = rep(0,T)
+
+for(t in 2:T){
+  theta_star = mvrnorm(1,theta[t-1,], Sigma = proposal_var)
+  r = ratio(theta_star, theta[t-1,])
+  u = runif(1)
+  if(u<r){
+    theta[t,] = theta_star
+    accept[t] = 1
+  } else{
+    theta[t,] = theta[t-1,]
+  }
+}
+par(mfrow = c(1,2))
+plot(theta[,1], type = 'l', xlab = "t", ylab = expression(alpha))
+plot(theta[,2], type = 'l', xlab = "t",ylab = expression(beta))
+@
+Based on trace the trace plots, there does not seem to be a failure of convergence to the stationary distribution for either $\alpha$ or $\beta$.
+<<>>=
+nburn = 1e3
+mean(accept[-(1:nburn)])
+@
+The acceptance rate is approximately 39.6\%.
+<<>>=
+library(coda)
+theta.mcmc = as.mcmc(theta[-(1:nburn),])
+effectiveSize(theta.mcmc)
+@
+Based on the effectiveSize, $>1000$ for both $\alpha$ and $\beta$ have been obtained.
+\subsection*{Part C}
+<<>>=
+# The posterior estimates for alpha and beta.
+apply(theta, 2, mean)
+hist(theta[,1], probability = TRUE,
+     main = expression(alpha), xlim = c(-30,30))
+lines(density(theta[,1]), col = "blue")
+curve(dnorm(x, 0,10), add = TRUE, col = "red")
+legend("topleft", legend = c("posterior density", "prior density"), 
+       fill = c("blue", "red"))
+
+hist(theta[,2], probability = TRUE, 
+     main = expression(beta), xlim = c(-30,30))
+lines(density(theta[,2]), col = "blue")
+curve(dnorm(x, 0,10), add = TRUE, col = "red")
+legend("topleft", legend = c("posterior density", "prior density"), 
+       fill = c("blue", "red"))
+@
+The prior estimates for both $\alpha$ and $\beta$ are 0 because the densities for are defined as $N(0,10^{2})$. The difference between the posterior and prior estimate for $\alpha$ is approximately 8.63 where as the difference between those of beta are approximately 0.69. 
+For the different in the posterior and prior densities for alpha, there is a shift to the left (hence the negative mean) and a lower standard deviation. For beta, the change in SD is much more significant. 
+\subsection*{Part D}
+<<>>=
+fab = function(x,theta){
+  return(exp(theta[1]+theta[2]*x)/(1+exp(theta[1]+theta[2]*x)))
+}
+confidence_band = matrix(nrow = length(x), ncol = 3)
+
+confidence_band[,1] = x
+for(i in 1:length(x)){
+  fabresults = rep(0, nrow(theta))
+  for(t in 1:nrow(theta)){
+  fabresults[t] = fab(x[i], theta[t,])
+  }
+  confidence_band[i, 2:3] = quantile(fabresults, c(0.025,0.975))
+  }
+confidence_band = as.data.frame(confidence_band)
+names(confidence_band) = c("x_i", "lower", "upper")
+confidence_band = confidence_band[order(confidence_band$x_i),]
+plot(nests~wingspan, data = msparrownest, pch =20, 
+     ylab = expression(f[ab](x)))
+lines(upper~x_i, data = confidence_band, col = "red")
+lines(lower~x_i, data = confidence_band, col = "red")
+@
+\end{document}
