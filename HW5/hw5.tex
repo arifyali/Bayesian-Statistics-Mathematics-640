@@ -244,7 +244,7 @@ Problem1b = function(seed = F, graph = F){
 Problem1b(1e8, T)
 \end{verbatim}
 \end{kframe}
-\includegraphics[width=1\linewidth]{figure/unnamed-chunk-7-1} 
+\includegraphics[width=0.50\linewidth]{figure/unnamed-chunk-7-1} 
 \begin{kframe}\begin{verbatim}
 ## $`least-squares regression coefficients`
 ##   (Intercept)             M            So            Ed           Po1 
@@ -359,7 +359,7 @@ plot(theta[,1], type = 'l', xlab = "t", ylab = expression(alpha))
 plot(theta[,2], type = 'l', xlab = "t",ylab = expression(beta))
 \end{verbatim}
 \end{kframe}
-\includegraphics[width=1\linewidth]{figure/unnamed-chunk-9-1} 
+\includegraphics[width=0.50\linewidth]{figure/unnamed-chunk-9-1} 
 
 \end{knitrout}
 Based on trace the trace plots, there does not seem to be a failure of convergence to the stationary distribution for either $\alpha$ or $\beta$.
@@ -400,7 +400,7 @@ legend("topleft", legend = c("posterior density", "prior density"),
        fill = c("blue", "red"))
 \end{verbatim}
 \end{kframe}
-\includegraphics[width=1\linewidth]{figure/unnamed-chunk-12-1} 
+\includegraphics[width=0.50\linewidth]{figure/unnamed-chunk-12-1} 
 \begin{kframe}\begin{verbatim}
 hist(theta[,2], probability = TRUE, 
      main = expression(beta), xlim = c(-30,30))
@@ -410,7 +410,7 @@ legend("topleft", legend = c("posterior density", "prior density"),
        fill = c("blue", "red"))
 \end{verbatim}
 \end{kframe}
-\includegraphics[width=1\linewidth]{figure/unnamed-chunk-12-2} 
+\includegraphics[width=0.50\linewidth]{figure/unnamed-chunk-12-2} 
 
 \end{knitrout}
 The prior estimates for both $\alpha$ and $\beta$ are 0 because the densities for are defined as $N(0,10^{2})$. The difference between the posterior and prior estimate for $\alpha$ is approximately 8.63 where as the difference between those of beta are approximately 0.69. 
@@ -441,7 +441,7 @@ lines(upper~x_i, data = confidence_band, col = "red")
 lines(lower~x_i, data = confidence_band, col = "red")
 \end{verbatim}
 \end{kframe}
-\includegraphics[width=1\linewidth]{figure/unnamed-chunk-13-1} 
+\includegraphics[width=0.50\linewidth]{figure/unnamed-chunk-13-1} 
 
 \end{knitrout}
 \end{document}
