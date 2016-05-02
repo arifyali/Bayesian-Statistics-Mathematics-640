@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{amscd, amssymb, amsmath, verbatim, setspace}
+\usepackage[left=1.0in, right=1.0in, top=1.0in, bottom=1.0in]{geometry}
+\usepackage{mathrsfs}
+\usepackage{listings}
+<<echo=FALSE>>=
+  library(knitr)
+opts_knit$set(concordance=TRUE)
+opts_chunk$set(background="white", highlight=FALSE, fig.keep="high", out.width="0.50\\linewidth")
+@
+
+\begin{document}
+\begin{flushright}
+Arif Ali\\
+Math 640 Bayesian Statistics\\
+May 11, 2016\\
+\end{flushright}
+
+\begin{center}
+\LARGE\textbf{Final Exam}
+  \end{center}
+\section*{Exercise 1}
+\subsection*{Part A}
+\begin{equation}
+\begin{split}
+F(x)=\int_{k}^{x}\theta k^{\theta}*x^{-(\theta+1)}dx=\theta k^{\theta}\int_{k}^{x}x^{-(\theta+1)}dx=\theta k^{\theta}\big|_{k}^{x}-\frac{1}{\theta}x^{-\theta}dx=\theta k^{\theta}\left(-\frac{1}{\theta}x^{-\theta}+\frac{1}{\theta}k^{-\theta}\right)= \\
+1-\left(\frac{k}{x}\right)^{\theta}
+\end{split}
+\end{equation} 
+
+
+Let $u\sim unif(0,1)$
+
+\begin{equation}
+\begin{split}
+u = F(x)\implies u = 1-\left(\frac{k}{x}\right)^{\theta}\implies (1-u) = \left(\frac{k}{x}\right)^{\theta}\implies(1-u)^{1/\theta} = \left(\frac{k}{x}\right) \implies x = \frac{k}{(1-u)^{1/\theta}}\\
+\therefore F^{-1}(x) = \frac{k}{(1-x)^{1/\theta}}
+\end{split}
+\end{equation} 
+
+Obtain a random sample, u, from $U\sim unif(0,1)$. Obtain x by computing $F^{-1}(x)$ and ensure that the values of $x\leq k$ will be evaluated to zero (this will only occur when u = 0).
+\subsection*{Part B}
+<<>>=
+set.seed(1)
+k=2
+theta = 3
+u = runif(1e6)
+X = k/(1-u)^(1/theta)
+X[u==0]=0
+@
+\subsection*{Part C}
+<<>>=
+hist(X[X<10],breaks =50, freq = F)
+curve(3*2^3/x^4, col = "red", type = "l", add = T)
+@
+\subsection*{Part D}
+$P(X<3)=F(x=3)=1-(\frac{2}{3})^{3})=0.7037037$
+<<>>=
+mean(X<3)
+@
+\newpage
+\section*{Exercise 2}
+
+\end{document}
